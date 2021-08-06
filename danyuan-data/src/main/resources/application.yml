@@ -1,0 +1,22 @@
+server:
+  port: 8003
+  servlet:
+    context-path: /data
+
+spring:
+  banner:    charset: utf-8
+  profiles:
+    active:
+    - h2
+    - hikari
+    - nacos
+    
+  resources:
+    static-locations:
+    - classpath:/META-INF/resources/
+    - classpath:/resources/
+    - classpath:/static/
+    - classpath:/public/
+    - file:./datafile/
+  batch:    initialize-schema: always
+    job:      names: jdbcItemReadJobDemo

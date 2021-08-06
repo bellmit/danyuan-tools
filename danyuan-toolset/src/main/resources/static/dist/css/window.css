@@ -1,0 +1,34 @@
+
+.dev-fx-window {
+    -fx-background-color: #00000000;
+    -fx-pref-width: 100%;
+    -fx-pref-height: 30;
+}
+
+.dev-fx-window-min {
+    -fx-background-color: #00000000;
+    -fx-font-size: 18;
+    -fx-font-family: "Fira Code";
+    -fx-pref-width: 55;
+    -fx-border-radius: 0;
+    -fx-border-width: 0;
+}
+
+.dev-fx-window-min:hover {
+    -fx-background-color: #4cc5e8;
+    -fx-text-fill: white; /* 字体颜色 */
+}
+
+.dev-fx-window-close {
+    -fx-background-color: #00000000;
+    -fx-font-size: 18;
+   -fx-font-family: "Fira Code";
+    -fx-pref-width: 55;
+    -fx-border-radius: 0;
+    -fx-border-width: 0;
+}
+
+.dev-fx-window-close:hover {
+    -fx-background-color: #e81123;
+    -fx-text-fill: white; /* 字体颜色 */
+}

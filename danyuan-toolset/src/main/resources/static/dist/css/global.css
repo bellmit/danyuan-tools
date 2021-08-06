@@ -1,0 +1,87 @@
+.root {
+   -fx-background-color: #FFFFFF;
+}
+.button {
+    -fx-background-color: #009688;
+    -fx-background-radius: 0;
+    -fx-text-fill: #000000;
+    -fx-margin: 0;
+}
+.btn {
+	-fx-background-color: #DDDDDD
+}
+.btn-primary{
+	-fx-background-color: #0066FF;
+}
+.btn-info{
+	-fx-background-color: #99FFFF;
+}
+.btn-success{
+	-fx-background-color: #33CCFF;
+}
+.btn-dangerous{
+	-fx-background-color: #FF3366;
+}
+.btn-warning{
+	-fx-background-color: #FFFF99;
+}
+.btn-error{
+	-fx-background-color: #C0C0C0;
+}
+.btn-min {
+
+}
+.btn-small{
+
+}
+.btn-middle{
+
+}
+.btn-large{
+
+}
+.btn-max{
+
+}
+
+/*顶部菜单栏*/
+.menu-bar{
+    -fx-background-color:#F0F0F0;
+    -fx-border:none;
+    -fx-padding:0;
+    -fx-font-size:12;
+}
+.menu-item{
+	-fx-padding: 8 60 8 30;
+	-fx-font-size:12;
+	-fx-cursor:hand;
+}
+.context-menu{
+	-fx-padding:2;
+	-fx-border-width:0;
+	-fx-background-color:rgb(242,242,242,0.96); /*0.87*/
+	/*-fx-background-radius:2px;*/
+	/*-fx-effect:dropshadow(three-pass-box, #F2F2F2, 1, 0, 0, 0);*/ /*阴影效果*/
+}
+.menu-bar > .container > .menu-button:showing{ /*菜单栏选中并移动到二级菜单时一级选中菜单的样式*/
+    -fx-background-color:#CCCCCE;
+    -fx-border-color:#CCCCCE;
+}
+.menu-button{
+	-fx-padding:1 4 1 4;
+	-fx-border-width:1;
+	-fx-border-color:#F0F0F0;
+}
+.menu-button:hover{
+	-fx-background-color:#CCCCCE;
+	-fx-border-color:#CCCCCE;
+}
+.menu-button > .label,.menu-item > .label{
+	-fx-text-fill:BLACK;
+}
+.menu-item:focused{
+	-fx-background-color:#CCCCCE; /*#90C8F6*/
+}
+.menu:focused > .right-container > .arrow{
+    -fx-background-color:#CCCCCE;
+}

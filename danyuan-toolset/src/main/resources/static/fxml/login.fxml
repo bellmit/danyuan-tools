@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.Button?>
+
+<GridPane fx:id="loginPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.danyuan.application.tools.windows.controller.LoginController">
+   <columnConstraints>
+      <ColumnConstraints />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+      <RowConstraints maxHeight="1.7976931348623157E308" minHeight="-Infinity" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="1.7976931348623157E308" minHeight="-Infinity" vgrow="SOMETIMES" />
+   </rowConstraints>
+   <children>
+
+      <Label text="%usernameLabel" />
+      <TextField fx:id="username" GridPane.columnIndex="1" />
+      <Label text="%passwordLabel" GridPane.rowIndex="1" />
+      <TextField fx:id="password"  GridPane.columnIndex="1" GridPane.rowIndex="1" />
+      <Button fx:id="loginButton" mnemonicParsing="false" onAction="#setHelloText" text="%applyButton" textAlignment="RIGHT" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+   </children>
+</GridPane>

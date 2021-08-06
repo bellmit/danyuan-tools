@@ -1,0 +1,56 @@
+spring:
+  resources:
+    static-locations:
+    - classpath:/META-INF/resources/
+    - classpath:/resources/
+    - classpath:/static/
+    - classpath:/public/
+    - file:./resume/
+    - file:./outputfile/
+    - file:./uploadfile/
+    - file:./headimg/
+    - file:./file/
+    - file:./markdown/
+    - file:./source/
+  aop:
+    proxy-target-class: true
+  datasource:
+    schema:
+    - classpath:sql/schema.sql
+    data: classpath:sql/data.sql
+#  servlet:
+#    multipart:
+#      max-file-size: 100000000
+#      max-request-size: 100000000
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  jpa:
+    generate-ddl: false
+    open-in-view: false
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+      show_sql: true
+      #naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+      naming-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+        use_sql_comments: true
+  messages:
+    basename: /static/i18n/messages #指定国际化文件路径
+    encoding: UTF-8
+
+  profiles:
+    active:
+#    - localhost
+    - user
+    - h2
+    - hikari
+
+javafx:
+  title: 我的工具箱
+  appicons:
+  - "/static/dist/imgs/uugai_94x194.png"
