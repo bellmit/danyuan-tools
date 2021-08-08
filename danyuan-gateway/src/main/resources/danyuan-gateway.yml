@@ -1,0 +1,16 @@
+spring:
+  cloud:
+    gateway:
+      discovery:
+      # 跨域
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedHeaders: "*"
+            allowedOrigins: "*"
+            allowedMethods:
+            - GET
+              POST
+              DELETE
+              PUT
+              OPTION

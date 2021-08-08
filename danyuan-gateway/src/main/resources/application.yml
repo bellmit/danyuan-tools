@@ -1,5 +1,5 @@
 server:
-  port: 80  servlet:    context-path: /
+  port: 8001  servlet:    context-path: /
 spring:
   application:    name: danyuan-gateway
   banner:    charset: utf-8
@@ -7,9 +7,8 @@ spring:
     active:
     - gateway
     - nacos
-    - app
 
 
 app:
   name: ${spring.application.name}
-  version: @project.version@        
+  version: @project.version@

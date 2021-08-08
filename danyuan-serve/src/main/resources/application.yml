@@ -1,6 +1,6 @@
 server:
   port: 8002
-  servlet:    context-path: /serve
+  servlet:    context-path: /server
   
 
 spring:
@@ -8,7 +8,10 @@ spring:
   banner:    charset: utf-8
   profiles:
     active:
-    - h2
-    - hikari
     - nacos
-      
+    - h2  
+    - hikari
+
+app:
+  name: ${spring.application.name}
+  version: @project.version@      
