@@ -17,9 +17,5 @@ spring:
     username: sa
     password: 
     initialization-mode: ALWAYS
-    #启动时需要初始化的建表语句
-    schema: classpath:schema-h2.sql
-    #初始化的数据
-    data: classpath:data-h2.sql
     sql-script-encoding: utf-8
     separator: ;

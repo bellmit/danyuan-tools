@@ -1,5 +1,5 @@
 server:
-  port: 8001
+  port: 8003
   servlet:
     context-path: /security
 
@@ -48,7 +48,7 @@ spring:
     - h2
     - hikari
     - nacos
-    - app
+    
 app:
   name: ${spring.application.name}
   version: @project.version@         

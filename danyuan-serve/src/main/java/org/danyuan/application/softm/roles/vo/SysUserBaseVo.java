@@ -1,6 +1,6 @@
 package org.danyuan.application.softm.roles.vo;
 
-import org.danyuan.application.bean.user.SysUserBaseInfo;
+import org.danyuan.application.bean.user.SysUserInfo;
 import org.danyuan.application.common.base.Pagination;
 
 /**
@@ -8,7 +8,7 @@ import org.danyuan.application.common.base.Pagination;
  * tk.ainiyue.danyuan.application.user.userbase.vo 描 述 ： TODO(用一句话描述该文件做什么)
  * 机能名称： 技能ID ： 作 者 ： Administrator 时 间 ： 2018年1月11日 上午11:30:56 版 本 ： V1.0
  */
-public class SysUserBaseVo extends Pagination<SysUserBaseInfo> {
+public class SysUserBaseVo extends Pagination<SysUserInfo> {
 	String uuid;
 	
 	/**

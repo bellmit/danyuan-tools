@@ -7,31 +7,16 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.UUID;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.NamedQuery;
-import javax.persistence.Table;
-
 import org.danyuan.application.common.base.BaseEntity;
 import org.danyuan.application.common.utils.DateUtils;
 
 /**
  * @author Administrator
  */
-@Entity
-@Table(name = "sys_user_base_info")
-@NamedQuery(name = "SysUserBaseInfo.findAll", query = "SELECT s FROM SysUserBaseInfo s")
-public class SysUserBaseInfo extends BaseEntity implements Serializable {
+public class SysUserInfo extends BaseEntity implements Serializable {
 	private static final long	serialVersionUID	= 1L;
 	// 用户基本信息
 	private String				TABLE_NAME			= "SYS_USER_BASE_INFO";
-	// 密码
-	@Column(name = "password")
-	private String				password;
-	// 用户名
-	@Column(name = "user_name")
-	private String				userName;
-	
 	private String				uuid;
 	private String				姓名;
 	private String				sfzh18;
@@ -446,16 +431,16 @@ public class SysUserBaseInfo extends BaseEntity implements Serializable {
 		return "SysUserBaseInfo [uuid=" + uuid + ", 姓名=" + 姓名 + ", sfzh18=" + sfzh18 + ", 籍贯省=" + 籍贯省 + ", 籍贯市=" + 籍贯市 + ", 籍贯县=" + 籍贯县 + ", id_出生日期=" + id_出生日期 + ", id_性别=" + id_性别 + ", id_生肖=" + id_生肖 + ", id_星座=" + id_星座 + ", 籍贯编码=" + 籍贯编码 + ", 地址=" + 地址 + ", 电话=" + 电话 + ", qq号码=" + qq号码 + ", 电子邮箱=" + 电子邮箱 + ", 用户名=" + 用户名 + ", 学历=" + 学历 + ", 公示时间=" + 公示时间 + ", 区号=" + 区号 + ", 工作单位=" + 工作单位 + ", 手机号码=" + 手机号码 + ", 昵称=" + 昵称 + ", ip地址=" + ip地址 + ", msn=" + msn + ", 网址=" + 网址 + ", 民族=" + 民族 + ", 拼音=" + 拼音 + ", 籍贯邮编=" + 籍贯邮编 + ", position=" + position + ", 身高_cm=" + 身高_cm + ", 血型=" + 血型 + ", 现住地=" + 现住地 + ", 地区=" + 地区 + ", 曾用名=" + 曾用名 + ", 体重=" + 体重 + ", 婚姻=" + 婚姻 + ", 政治面貌=" + 政治面貌 + ", 特长=" + 特长 + ", 账号=" + 账号 + ", 传真=" + 传真 + ", 号码归属地=" + 号码归属地 + ", 入库时间=" + 入库时间 + ", 数据来源=" + 数据来源 + "]";
 	}
 	
-	public SysUserBaseInfo() {
+	public SysUserInfo() {
 		super();
 	}
 	
-	public SysUserBaseInfo(String uuid) {
+	public SysUserInfo(String uuid) {
 		super();
 		this.uuid = uuid;
 	}
 	
-	public SysUserBaseInfo sfzh(String sfzh) {
+	public SysUserInfo sfzh(String sfzh) {
 		// 1.整理号码统一为18位
 		// 2.查询库中是否有历史数据
 		// 3.没有的通过工具类整理出 性别，生日，生效，星座，地区，省，市，随机主键id
