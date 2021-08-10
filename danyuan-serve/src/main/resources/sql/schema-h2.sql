@@ -1,0 +1,2 @@
+ create table sys_dbms_table_dis (uuid varchar(36) COMMENT '主键' not null, dis_sql varchar(2000) COMMENT 'dis_sql', drop_sql varchar(2000) COMMENT 'drop_sql', jdbc_uuid varchar(36) COMMENT '数据库表id', rename_sql varchar(2000) COMMENT 'rename_sql', reset_sql varchar(200) COMMENT 'reset_sql', tabs_desc varchar(200) COMMENT '表的含义', tabs_name varchar(200) COMMENT '数据库表名', tabs_rows varchar(200) COMMENT '数据库表数据量', type varchar(200) COMMENT '数据库类型', type_name varchar(200) COMMENT '类型名', primary key (uuid));
+ 

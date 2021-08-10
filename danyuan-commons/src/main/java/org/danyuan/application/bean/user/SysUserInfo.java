@@ -8,7 +8,7 @@ import java.util.Date;
 import java.util.UUID;
 
 import org.danyuan.application.common.base.BaseEntity;
-import org.danyuan.application.common.utils.DateUtils;
+import org.danyuan.application.common.utils.string.DateUtils;
 
 /**
  * @author Administrator

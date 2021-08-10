@@ -28,20 +28,27 @@
 	</developers>
 
 	<modules>
+		<module>danyuan-gateway</module>
+		<module>danyuan-commons</module>
+		<module>danyuan-serve</module>
 		<module>danyuan-data</module>
 		<module>danyuan-security</module>
 		<module>danyuan-toolset</module>
-		<module>danyuan-serve</module>
-		<module>danyuan-commons</module>
-		<module>danyuan-gateway</module>
-		<module>danyuan-data-h2</module>
 	</modules>
 
 	<properties>
 		<java.version>1.8</java.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		
 		<spring-cloud.version>Hoxton.SR9</spring-cloud.version>
 		<spring.boot.version>2.3.2.RELEASE</spring.boot.version>
 		<spring.cloud.alibaba.version>2.2.6.RELEASE</spring.cloud.alibaba.version>
+		<fastjson.version>1.2.78</fastjson.version>
+		<poi.version>5.0.0</poi.version>
+		<xmlbeans.version>5.0.0</xmlbeans.version>
+		<jsoup.version>1.14.1</jsoup.version>
+		<json.version>20210307</json.version>
 	</properties>
 	
 	<dependencyManagement>
@@ -70,6 +77,54 @@
 				<version>${spring.cloud.alibaba.version}</version>
 				<type>pom</type>
 				<scope>import</scope>
+			</dependency>
+			<!-- 支持Word文档的操作 -->
+			<dependency>
+				<groupId>org.apache.poi</groupId>
+				<artifactId>poi-scratchpad</artifactId>
+				<version>${poi.version}</version>
+			</dependency>
+			<!-- 加入POI核心依赖 -->
+			<dependency>
+				<groupId>org.apache.poi</groupId>
+				<artifactId>poi</artifactId>
+				<version>${poi.version}</version>
+			</dependency>
+			<!-- 为POI支持Office Open XML -->
+			<dependency>
+				<groupId>org.apache.poi</groupId>
+				<artifactId>poi-ooxml</artifactId>
+				<version>${poi.version}</version>
+			</dependency>
+			<!-- https://mvnrepository.com/artifact/com.alibaba/fastjson -->
+			<dependency>
+				<groupId>com.alibaba</groupId>
+				<artifactId>fastjson</artifactId>
+				<version>${fastjson.version}</version>
+			</dependency>
+			<!-- https://mvnrepository.com/artifact/org.apache.xmlbeans/xmlbeans -->
+			<dependency>
+				<groupId>org.apache.xmlbeans</groupId>
+				<artifactId>xmlbeans</artifactId>
+				<version>${xmlbeans.version}</version>
+			</dependency>
+			<!-- https://mvnrepository.com/artifact/org.jsoup/jsoup -->
+			<dependency>
+				<groupId>org.jsoup</groupId>
+				<artifactId>jsoup</artifactId>
+				<version>${jsoup.version}</version>
+			</dependency>
+			<!-- https://mvnrepository.com/artifact/org.json/json -->
+			<dependency>
+				<groupId>org.json</groupId>
+				<artifactId>json</artifactId>
+				<version>${json.version}</version>
+			</dependency>
+			
+			<dependency>
+				<groupId>fr.opensagres.xdocreport</groupId>
+				<artifactId>fr.opensagres.poi.xwpf.converter.xhtml</artifactId>
+				<version>2.0.2</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>

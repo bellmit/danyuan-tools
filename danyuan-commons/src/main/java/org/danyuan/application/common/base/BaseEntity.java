@@ -78,6 +78,7 @@ public class BaseEntity {
 	/**
 	 * 方法名 ： getUuid
 	 * 功 能 ： 返回变量 uuid 的值
+	 * 
 	 * @return: String
 	 */
 	public String getUuid() {
@@ -95,6 +96,7 @@ public class BaseEntity {
 	/**
 	 * 方法名 ： getDiscription
 	 * 功 能 ： 返回变量 discription 的值
+	 * 
 	 * @return: String
 	 */
 	public String getDiscription() {
@@ -112,6 +114,7 @@ public class BaseEntity {
 	/**
 	 * 方法名 ： getCreateTime
 	 * 功 能 ： 返回变量 createTime 的值
+	 * 
 	 * @return: Date
 	 */
 	public Date getCreateTime() {
@@ -129,6 +132,7 @@ public class BaseEntity {
 	/**
 	 * 方法名 ： getCreateUser
 	 * 功 能 ： 返回变量 createUser 的值
+	 * 
 	 * @return: String
 	 */
 	public String getCreateUser() {
@@ -146,6 +150,7 @@ public class BaseEntity {
 	/**
 	 * 方法名 ： getUpdateTime
 	 * 功 能 ： 返回变量 updateTime 的值
+	 * 
 	 * @return: Date
 	 */
 	public Date getUpdateTime() {
@@ -163,6 +168,7 @@ public class BaseEntity {
 	/**
 	 * 方法名 ： getUpdateUser
 	 * 功 能 ： 返回变量 updateUser 的值
+	 * 
 	 * @return: String
 	 */
 	public String getUpdateUser() {
@@ -180,6 +186,7 @@ public class BaseEntity {
 	/**
 	 * 方法名 ： getDeleteFlag
 	 * 功 能 ： 返回变量 deleteFlag 的值
+	 * 
 	 * @return: Integer
 	 */
 	public Integer getDeleteFlag() {
