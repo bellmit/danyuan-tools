@@ -1,16 +1,16 @@
 spring:
   cloud:
     gateway:
+      httpclient:
+        pool:
+          maxIdleTime: 10000 #（根据需要调整）
       discovery:
-      # 跨域
-      globalcors:
-        corsConfigurations:
-          '[/**]':
-            allowedHeaders: "*"
-            allowedOrigins: "*"
-            allowedMethods:
-            - GET
-              POST
-              DELETE
-              PUT
-              OPTION
+        locator:
+          enabled: true # 开启从注册中心动态创建路由的功能，利用微服务名称进行路由
+          lower-case-service-id: true
+
+      routes:
+        - id: danyuan-serve
+          uri: lb://danyuan-serve
+          predicates:
+            - Path=/serve/**              
