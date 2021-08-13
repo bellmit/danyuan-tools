@@ -14,4 +14,5 @@ spring:
 
 app:
   name: ${spring.application.name}
-  version: @project.version@      
+  version: @project.version@
+  
