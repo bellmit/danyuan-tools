@@ -1,0 +1,15 @@
+logging:
+  level:
+    jdbc:
+      resultsettable: DEBUG
+      sqltiming: DEBUG
+
+      
+
+user:
+  old-path: "D:\\git\\danyuan-tools-web\\docs\\docs"
+  new-path: "D:\\git\\danyuan-tools-web\\docs\\docs2"
+  img-path: "D:\\git\\danyuan-tools-web\\docs\\images"
+  root-path: "/../../images"
+  
+        

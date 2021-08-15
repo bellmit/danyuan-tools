@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -32,14 +34,14 @@
 		<module>danyuan-data</module>
 		<module>danyuan-security</module>
 		<module>danyuan-toolset</module>
-    <module>jianshu-secede</module>
-  </modules>
+		<module>jianshu-secede</module>
+	</modules>
 
 	<properties>
 		<java.version>1.8</java.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		
+
 		<spring-cloud.version>Hoxton.SR9</spring-cloud.version>
 		<spring.boot.version>2.3.2.RELEASE</spring.boot.version>
 		<spring.cloud.alibaba.version>2.2.6.RELEASE</spring.cloud.alibaba.version>
@@ -49,7 +51,7 @@
 		<jsoup.version>1.14.1</jsoup.version>
 		<json.version>20210307</json.version>
 	</properties>
-	
+
 	<dependencyManagement>
 		<dependencies>
 			<!--spring cloud -->
@@ -77,19 +79,19 @@
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
-			<!-- Ö§³ÖWordÎÄµµµÄ²Ù×÷ -->
+			<!-- æ”¯æŒWordæ–‡æ¡£çš„æ“ä½œ -->
 			<dependency>
 				<groupId>org.apache.poi</groupId>
 				<artifactId>poi-scratchpad</artifactId>
 				<version>${poi.version}</version>
 			</dependency>
-			<!-- ¼ÓÈëPOIºËÐÄÒÀÀµ -->
+			<!-- åŠ å…¥POIæ ¸å¿ƒä¾èµ– -->
 			<dependency>
 				<groupId>org.apache.poi</groupId>
 				<artifactId>poi</artifactId>
 				<version>${poi.version}</version>
 			</dependency>
-			<!-- ÎªPOIÖ§³ÖOffice Open XML -->
+			<!-- ä¸ºPOIæ”¯æŒOffice Open XML -->
 			<dependency>
 				<groupId>org.apache.poi</groupId>
 				<artifactId>poi-ooxml</artifactId>
@@ -119,12 +121,34 @@
 				<artifactId>json</artifactId>
 				<version>${json.version}</version>
 			</dependency>
-			
+
 			<dependency>
 				<groupId>fr.opensagres.xdocreport</groupId>
 				<artifactId>fr.opensagres.poi.xwpf.converter.xhtml</artifactId>
 				<version>2.0.2</version>
 			</dependency>
+			<!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient -->
+			<dependency>
+				<groupId>org.apache.httpcomponents</groupId>
+				<artifactId>httpclient</artifactId>
+				<version>4.5.13</version>
+			</dependency>
+			<!-- apache ioæ“ä½œé€šç”¨jaråŒ… -->
+		     <dependency>
+		            <groupId>commons-io</groupId>
+		            <artifactId>commons-io</artifactId>
+		            <version>2.4</version>
+		       </dependency>
+		     <dependency>
+		        <groupId>org.apache.httpcomponents</groupId>
+		        <artifactId>httpmime</artifactId>
+		        <version>4.3.5</version>
+		        </dependency>
+		        <dependency>
+		    <groupId>commons-logging</groupId>
+		        <artifactId>commons-logging</artifactId>
+		        <version>1.2</version>
+		    </dependency>
 		</dependencies>
 	</dependencyManagement>
 
