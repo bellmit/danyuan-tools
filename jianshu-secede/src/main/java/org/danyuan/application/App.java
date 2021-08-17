@@ -25,7 +25,6 @@ public class App implements ApplicationRunner {
 	 * 参 考 ： @see org.springframework.boot.ApplicationRunner#run(org.springframework.boot.ApplicationArguments)
 	 * 作 者 ： wth
 	 */
-	
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
 		runner.exec();

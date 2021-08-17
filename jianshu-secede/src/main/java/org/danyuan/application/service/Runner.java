@@ -3,9 +3,11 @@ package org.danyuan.application.service;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpStatus;
 import org.apache.http.client.config.RequestConfig;
@@ -34,7 +36,7 @@ public class Runner {
 	
 	@Autowired
 	UserConf userConf;
-
+	
 	public void exec() {
 		
 		String newpath = userConf.getNewPath();
@@ -44,19 +46,19 @@ public class Runner {
 		File file = new File(oldpath);
 		CloseableHttpClient client = HttpClients.createDefault();
 		
-		List<String> list = TxtFilesReader.readFileByLines("D:\\git\\danyuan-tools-web\\docs\\_sidebar.md");
+		List<String> list = new ArrayList<>();
 		
-		readFile(file, newpath, oldpath, client, list, "\t");
+		readFile(file, newpath, oldpath, client, list, "");
 		StringBuilder sb = new StringBuilder();
 		for (String string : list) {
 			sb.append(string + "\n");
 		}
 		TxtFilesWriter.writeToFile(sb.toString(), newpath + "\\dir.md");
-
+		
 	}
-
+	
 	private void readFile(File file, String newpath, String oldpath, CloseableHttpClient client, List<String> listMenu, String head) {
-
+		
 		File[] files = file.listFiles();
 		for (File file2 : files) {
 			String newp = file2.getPath().replace(oldpath, newpath);
@@ -70,32 +72,30 @@ public class Runner {
 				StringBuilder sb = new StringBuilder();
 				int i = 0; // 计数
 				for (String str : list) {
-					if (str.startsWith("![")) {
+					if (StringUtils.isNotEmpty(str) && str.contains("![")) {
 						// 提取链接
 						String link = str.substring(str.indexOf("](") + 2, str.indexOf(")"));
-						System.err.println(link);
 						// 下载图片
 						String path = newp.replace(newpath, "").replace(".md", "") + "\\" + i + ".png";
 						String savePath = userConf.getImgPath() + path;
-						if (org.apache.commons.lang3.StringUtils.isNotEmpty(link) && link.startsWith("https://upload-images.jianshu.io/upload_images")) {
+						if (StringUtils.isNotEmpty(link) && link.startsWith("http")) {
 							httpGetImg(client, link, savePath);
 						}
-
-						sb.append("![" + file2.getName() + "](" + userConf.getRootPath() + path.replace("\\", "/") + ")\n");
+						sb.append(str.substring(0, str.indexOf("![")) + "![" + i + "](" + userConf.getRootPath() + path.replace("\\", "/") + ")\n");
 						i++;
 					} else {
 						sb.append(str + "\n");
 					}
 				}
-				listMenu.add(head + "* [" + file2.getName() + "](" + newp.replace(newpath, "/docs") + ")");
+				listMenu.add(head + "* [" + file2.getName().replace(".md", "") + "](" + newp.replace(newpath, "/docs").replace("\\", "/") + ")");
 				// 重写文件
 				TxtFilesWriter.writeToFile(sb.toString(), newp);
 			}
 		}
 		// 记录 文件路径
-
+		
 	}
-
+	
 	private void httpGetImg(CloseableHttpClient client, String imgUrl, String savePath) {
 		// 发送get请求
 		HttpGet request = new HttpGet(imgUrl);

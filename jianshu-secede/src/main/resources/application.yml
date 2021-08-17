@@ -7,9 +7,9 @@ logging:
       
 
 user:
-  old-path: "D:\\git\\danyuan-tools-web\\docs\\docs"
+  old-path: "D:\\git\\danyuan-tools-web\\docs\\user-2787821-1629166111"
   new-path: "D:\\git\\danyuan-tools-web\\docs\\docs2"
   img-path: "D:\\git\\danyuan-tools-web\\docs\\images"
-  root-path: "/../../images"
+  root-path: "../../images"
   
         
