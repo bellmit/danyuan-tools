@@ -7,12 +7,12 @@
 	<artifactId>jianshu-secede</artifactId>
 	<packaging>jar</packaging>
 
-	<name>Spring Boot Blank Project (from https://github.com/making/spring-boot-blank)</name>
+	<name>jianshu-secede</name>
 
 	<parent>
 		<groupId>org.danyuan.application</groupId>
 		<artifactId>danyuan-tools</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
+		<version>0.0.1</version>
 	</parent>
 	<properties>
 		<java.version>1.8</java.version>

@@ -1,0 +1,22 @@
+stages:
+- build
+
+variables:
+  MAVEN_OPTS: "-Dmaven.repo.local=/home/.m2/repository"
+
+build:jdk8:
+  stage: build
+  script:
+   - echo "=============== 开始编译打包任务 ==============="
+   - mvn clean package -Dmaven.test.skip=true
+   - cd danyuan-gateway && mvn docker:build  -DpushImage
+  # - cd danyuan-serve && mvn docker:build  -DpushImage
+  artifacts:
+    paths:
+      - build/
+  only:
+   - master #当有代码合到主干时触发这个job
+  tags:
+  - danyuan-tools
+  image: maven:3.3.9-jdk-8
+

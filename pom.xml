@@ -10,8 +10,8 @@
 	</parent>
 	<groupId>org.danyuan.application</groupId>
 	<artifactId>danyuan-tools</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>tools</name>
+	<version>0.0.1</version>
+	<name>danyuan-tools</name>
 	<description>Demo project for Spring Boot</description>
 	<packaging>pom</packaging>
 
