@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -35,7 +33,8 @@
 		<module>danyuan-security</module>
 		<module>danyuan-toolset</module>
 		<module>jianshu-secede</module>
-	</modules>
+    <module>danyuan-data-h2</module>
+  </modules>
 
 	<properties>
 		<java.version>1.8</java.version>
@@ -79,19 +78,19 @@
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
-			<!-- æ”¯æŒWordæ–‡æ¡£çš„æ“ä½œ -->
+			<!-- Ö§³ÖWordÎÄµµµÄ²Ù×÷ -->
 			<dependency>
 				<groupId>org.apache.poi</groupId>
 				<artifactId>poi-scratchpad</artifactId>
 				<version>${poi.version}</version>
 			</dependency>
-			<!-- åŠ å…¥POIæ ¸å¿ƒä¾èµ– -->
+			<!-- ¼ÓÈëPOIºËÐÄÒÀÀµ -->
 			<dependency>
 				<groupId>org.apache.poi</groupId>
 				<artifactId>poi</artifactId>
 				<version>${poi.version}</version>
 			</dependency>
-			<!-- ä¸ºPOIæ”¯æŒOffice Open XML -->
+			<!-- ÎªPOIÖ§³ÖOffice Open XML -->
 			<dependency>
 				<groupId>org.apache.poi</groupId>
 				<artifactId>poi-ooxml</artifactId>
@@ -133,7 +132,7 @@
 				<artifactId>httpclient</artifactId>
 				<version>4.5.13</version>
 			</dependency>
-			<!-- apache ioæ“ä½œé€šç”¨jaråŒ… -->
+			<!-- apache io²Ù×÷Í¨ÓÃjar°ü -->
 		     <dependency>
 		            <groupId>commons-io</groupId>
 		            <artifactId>commons-io</artifactId>

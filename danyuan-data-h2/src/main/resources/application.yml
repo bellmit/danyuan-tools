@@ -1,0 +1,18 @@
+server:
+  port: 8002
+  servlet:    context-path: /serve
+  
+
+spring:
+  application:    name: danyuan-serve-h2
+  banner:    charset: utf-8
+  profiles:
+    active:
+    - nacos
+    - h2  
+    - hikari
+
+app:
+  name: ${spring.application.name}
+  version: @project.version@
+  

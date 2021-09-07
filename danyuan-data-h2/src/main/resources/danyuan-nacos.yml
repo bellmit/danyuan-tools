@@ -1,0 +1,38 @@
+spring:
+  cloud:  
+    nacos:  
+      # nacos的信息
+      server-addr: 192.168.0.103:8848
+      discovery:  # 容器化后nacos不能找到，需要配置宿主机的ip 和服务的端口，
+        namespace: danyuan
+         # 宿主机的ip
+        ip: ${LOCAL_IP}
+        port: ${server.port}  
+    #inetutils:
+    #  preferred-networks: 10.0.3
+
+ribbon:  
+  ReadTimeout: 900000
+  ConnectTimeout: 900000
+   #对当前实例的重试次数
+  MaxAutoRetries: 0
+   #切换实例的重试次数 1
+  MaxAutoRetriesNextServer: 1
+feign:
+  hystrix:
+    enabled: false
+  client:
+    config:
+      default:
+        connectTimeout: 300000
+        readTimeout: 300000
+    
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            #熔断超时时间
+            timeoutInMilliseconds: 1000000
+
