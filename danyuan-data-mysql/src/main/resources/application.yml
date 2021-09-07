@@ -1,18 +1,17 @@
 server:
-  port: 8003
+  port: 8004
   servlet:    context-path: /data
   
 
 spring:
-  application:    name: danyuan-serve-h2
+  application:    name: danyuan-serve-mysql
   banner:    charset: utf-8
   profiles:
     active:
     - nacos
-    - h2  
+    - mysql
     - hikari
 
 app:
   name: ${spring.application.name}
   version: @project.version@
-  

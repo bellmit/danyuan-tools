@@ -16,6 +16,10 @@ spring:
     url: jdbc:h2:tcp://localhost:9091,localhost:9092/data
     username: sa
     password: 
+    #启动时需要初始化的建表语句
+    #schema: classpath:schema-mysql.sql
+    #初始化的数据
+    #data: classpath:data-mysql.sql
     initialization-mode: ALWAYS
     sql-script-encoding: utf-8
     separator: ;

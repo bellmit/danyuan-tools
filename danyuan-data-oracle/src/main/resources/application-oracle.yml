@@ -1,0 +1,12 @@
+
+spring:
+  datasource:
+    platform: ORACLE
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+    username: wth
+    password: tiger
+    url: jdbc:oracle:thin:@192.168.31.237:1521:orcl
+    xa:
+      properties:
+        pinGlobalTxToPhysicalConnection: true
+        useServerPrepStmts: true

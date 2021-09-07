@@ -34,14 +34,16 @@
 		<module>danyuan-toolset</module>
 		<module>jianshu-secede</module>
     <module>danyuan-data-h2</module>
-  </modules>
+    <module>danyuan-data-mysql</module>
+    <module>danyuan-data-oracle</module>
+	</modules>
 
 	<properties>
 		<java.version>1.8</java.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-		<spring-cloud.version>Hoxton.SR9</spring-cloud.version>
+		<spring-cloud.version>Hoxton.SR12</spring-cloud.version>
 		<spring.boot.version>2.3.2.RELEASE</spring.boot.version>
 		<spring.cloud.alibaba.version>2.2.6.RELEASE</spring.cloud.alibaba.version>
 		<fastjson.version>1.2.78</fastjson.version>
@@ -50,7 +52,7 @@
 		<jsoup.version>1.14.1</jsoup.version>
 		<json.version>20210307</json.version>
 	</properties>
-
+	
 	<dependencyManagement>
 		<dependencies>
 			<!--spring cloud -->
@@ -78,19 +80,19 @@
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
-			<!-- Ö§³ÖWordÎÄµµµÄ²Ù×÷ -->
+			<!-- Ö§ï¿½ï¿½Wordï¿½Äµï¿½ï¿½Ä²ï¿½ï¿½ï¿½ -->
 			<dependency>
 				<groupId>org.apache.poi</groupId>
 				<artifactId>poi-scratchpad</artifactId>
 				<version>${poi.version}</version>
 			</dependency>
-			<!-- ¼ÓÈëPOIºËÐÄÒÀÀµ -->
+			<!-- ï¿½ï¿½ï¿½ï¿½POIï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ -->
 			<dependency>
 				<groupId>org.apache.poi</groupId>
 				<artifactId>poi</artifactId>
 				<version>${poi.version}</version>
 			</dependency>
-			<!-- ÎªPOIÖ§³ÖOffice Open XML -->
+			<!-- ÎªPOIÖ§ï¿½ï¿½Office Open XML -->
 			<dependency>
 				<groupId>org.apache.poi</groupId>
 				<artifactId>poi-ooxml</artifactId>
@@ -132,7 +134,7 @@
 				<artifactId>httpclient</artifactId>
 				<version>4.5.13</version>
 			</dependency>
-			<!-- apache io²Ù×÷Í¨ÓÃjar°ü -->
+			<!-- apache ioï¿½ï¿½ï¿½ï¿½Í¨ï¿½ï¿½jarï¿½ï¿½ -->
 		     <dependency>
 		            <groupId>commons-io</groupId>
 		            <artifactId>commons-io</artifactId>

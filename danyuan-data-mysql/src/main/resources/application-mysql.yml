@@ -1,0 +1,15 @@
+
+spring:
+  datasource:
+    platform: MYSQL
+    #driverClassName: com.mysql.jdbc.Driver
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: root
+    url: jdbc:mysql://192.168.137.100:3306/application?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=UTC&zeroDateTimeBehavior=convertToNull&autoReconnect=true&failOverReadOnly=false
+    #schema: classpath:/org/springframework/batch/core/schema-mysql.sql
+    # SQLException: XAER_INVAL: Invalid arguments (or unsupported command)问题
+    xa:
+      properties:
+        pinGlobalTxToPhysicalConnection: true
+        useServerPrepStmts: true

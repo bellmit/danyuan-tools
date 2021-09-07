@@ -1,18 +1,17 @@
 server:
-  port: 8003
+  port: 8005
   servlet:    context-path: /data
   
 
 spring:
-  application:    name: danyuan-serve-h2
+  application:    name: danyuan-serve-orcl
   banner:    charset: utf-8
   profiles:
     active:
     - nacos
-    - h2  
+    - oracle
     - hikari
 
 app:
   name: ${spring.application.name}
   version: @project.version@
-  
