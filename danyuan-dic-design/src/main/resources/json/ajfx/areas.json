@@ -1,0 +1,129 @@
+[ {
+		dataValue : "北京市",
+		title : "北京市",
+		fyCode : "100"
+	}, {
+		dataValue : "天津市",
+		title : "天津市",
+		fyCode : "200"
+	}, {
+		dataValue : "河北省",
+		title : "河北省",
+		fyCode : "300"
+	}, {
+		dataValue : "山西省",
+		title : "山西省",
+		fyCode : "400"
+	}, {
+		dataValue : "内蒙古自治区",
+		title : "内蒙古自治区",
+		fyCode : "500"
+	}, {
+		dataValue : "辽宁省",
+		title : "辽宁省",
+		fyCode : "600"
+	}, {
+		dataValue : "吉林省",
+		title : "吉林省",
+		fyCode : "700"
+	}, {
+		dataValue : "黑龙江省",
+		title : "黑龙江省",
+		fyCode : "800"
+	}, {
+		dataValue : "上海市",
+		title : "上海市",
+		fyCode : "900"
+	}, {
+		dataValue : "江苏省",
+		title : "江苏省",
+		fyCode : "A00"
+	}, {
+		dataValue : "浙江省",
+		title : "浙江省",
+		fyCode : "B00"
+	}, {
+		dataValue : "安徽省",
+		title : "安徽省",
+		fyCode : "C00"
+	}, {
+		dataValue : "福建省",
+		title : "福建省",
+		fyCode : "D00"
+	}, {
+		dataValue : "江西省",
+		title : "江西省",
+		fyCode : "E00"
+	}, {
+		dataValue : "山东省",
+		title : "山东省",
+		fyCode : "F00"
+	}, {
+		dataValue : "河南省",
+		title : "河南省",
+		fyCode : "G00"
+	}, {
+		dataValue : "湖北省",
+		title : "湖北省",
+		fyCode : "H00"
+	}, {
+		dataValue : "湖南省",
+		title : "湖南省",
+		fyCode : "I00"
+	}, {
+		dataValue : "广东省",
+		title : "广东省",
+		fyCode : "J00"
+	}, {
+		dataValue : "广西壮族自治区",
+		title : "广西壮族自治区",
+		fyCode : "K00"
+	}, {
+		dataValue : "海南省",
+		title : "海南省",
+		fyCode : "L00"
+	}, {
+		dataValue : "重庆市",
+		title : "重庆市",
+		fyCode : "M00"
+	}, {
+		dataValue : "四川省",
+		title : "四川省",
+		fyCode : "N00"
+	}, {
+		dataValue : "贵州省",
+		title : "贵州省",
+		fyCode : "O00"
+	}, {
+		dataValue : "云南省",
+		title : "云南省",
+		fyCode : "P00"
+	}, {
+		dataValue : "西藏自治区",
+		title : "西藏自治区",
+		fyCode : "Q00"
+	}, {
+		dataValue : "陕西省",
+		title : "陕西省",
+		fyCode : "R00"
+	}, {
+		dataValue : "甘肃省",
+		title : "甘肃省",
+		fyCode : "S00"
+	}, {
+		dataValue : "青海省",
+		title : "青海省",
+		fyCode : "T00"
+	}, {
+		dataValue : "宁夏回族自治区",
+		title : "宁夏回族自治区",
+		fyCode : "U00"
+	}, {
+		dataValue : "新疆维吾尔自治区",
+		title : "新疆维吾尔自治区",
+		fyCode : "V00"
+	}, {
+		dataValue : "新疆维吾尔自治区高级人民法院生产建设兵团分院",
+		title : "新疆维吾尔自治区高级人民法院生产建设兵团分院",
+		fyCode : "X00"
+	} ]

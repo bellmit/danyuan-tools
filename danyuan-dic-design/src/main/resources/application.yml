@@ -1,0 +1,14 @@
+server:
+  port: 8006
+  servlet:
+    context-path: /dic/
+    
+spring:
+  application:    name: danyuan-dic-design
+  banner:    charset: utf-8
+  profiles:
+    active:
+    - nacos
+    - mysql
+    - hikari
+      

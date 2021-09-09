@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -33,9 +35,10 @@
 		<module>danyuan-security</module>
 		<module>danyuan-toolset</module>
 		<module>jianshu-secede</module>
-    <module>danyuan-data-h2</module>
-    <module>danyuan-data-mysql</module>
-    <module>danyuan-data-oracle</module>
+		<module>danyuan-data-h2</module>
+		<module>danyuan-data-mysql</module>
+		<module>danyuan-data-oracle</module>
+		<module>danyuan-dic-design</module>
 	</modules>
 
 	<properties>
@@ -43,7 +46,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-		<spring-cloud.version>Hoxton.SR12</spring-cloud.version>
+		<spring-cloud.version>Hoxton.SR9</spring-cloud.version>
 		<spring.boot.version>2.3.2.RELEASE</spring.boot.version>
 		<spring.cloud.alibaba.version>2.2.6.RELEASE</spring.cloud.alibaba.version>
 		<fastjson.version>1.2.78</fastjson.version>
@@ -51,8 +54,28 @@
 		<xmlbeans.version>5.0.0</xmlbeans.version>
 		<jsoup.version>1.14.1</jsoup.version>
 		<json.version>20210307</json.version>
+		<docker.host>http://192.168.0.105:2375</docker.host>
+		<docker.repository>192.168.0.103:5000</docker.repository>
+	
 	</properties>
 	
+	<distributionManagement>
+		<site>
+			<id>website</id>
+			<url>scp://webhost.company.com/www/website</url>
+		</site>
+		<repository>
+			<id>releases</id>
+			<name>maven-releases</name>
+			<url>http://192.168.0.103:9001/repository/maven-releases/</url>
+		</repository>
+		<snapshotRepository>
+			<id>snapshots</id>
+			<name>maven-snapshots</name>
+			<url>http://192.168.0.103:9001/repository/maven-snapshots/</url>
+		</snapshotRepository>
+	</distributionManagement>
+
 	<dependencyManagement>
 		<dependencies>
 			<!--spring cloud -->
@@ -80,19 +103,19 @@
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
-			<!-- ֧��Word�ĵ��Ĳ��� -->
+			<!-- 支持Word文档的操作 -->
 			<dependency>
 				<groupId>org.apache.poi</groupId>
 				<artifactId>poi-scratchpad</artifactId>
 				<version>${poi.version}</version>
 			</dependency>
-			<!-- ����POI�������� -->
+			<!-- 加入POI核心依赖 -->
 			<dependency>
 				<groupId>org.apache.poi</groupId>
 				<artifactId>poi</artifactId>
 				<version>${poi.version}</version>
 			</dependency>
-			<!-- ΪPOI֧��Office Open XML -->
+			<!-- 为POI支持Office Open XML -->
 			<dependency>
 				<groupId>org.apache.poi</groupId>
 				<artifactId>poi-ooxml</artifactId>
@@ -134,22 +157,22 @@
 				<artifactId>httpclient</artifactId>
 				<version>4.5.13</version>
 			</dependency>
-			<!-- apache io����ͨ��jar�� -->
-		     <dependency>
-		            <groupId>commons-io</groupId>
-		            <artifactId>commons-io</artifactId>
-		            <version>2.4</version>
-		       </dependency>
-		     <dependency>
-		        <groupId>org.apache.httpcomponents</groupId>
-		        <artifactId>httpmime</artifactId>
-		        <version>4.3.5</version>
-		        </dependency>
-		        <dependency>
-		    <groupId>commons-logging</groupId>
-		        <artifactId>commons-logging</artifactId>
-		        <version>1.2</version>
-		    </dependency>
+			<!-- apache io操作通用jar包 -->
+			<dependency>
+				<groupId>commons-io</groupId>
+				<artifactId>commons-io</artifactId>
+				<version>2.4</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.httpcomponents</groupId>
+				<artifactId>httpmime</artifactId>
+				<version>4.3.5</version>
+			</dependency>
+			<dependency>
+				<groupId>commons-logging</groupId>
+				<artifactId>commons-logging</artifactId>
+				<version>1.2</version>
+			</dependency>
 		</dependencies>
 	</dependencyManagement>
 
@@ -158,7 +181,6 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter</artifactId>
 		</dependency>
-
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
