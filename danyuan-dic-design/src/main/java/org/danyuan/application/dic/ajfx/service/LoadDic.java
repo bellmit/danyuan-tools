@@ -33,7 +33,7 @@ public class LoadDic implements ApplicationRunner {
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
 		// 案件分析字典导入
-		ajfxLoadDicService.loadDics();
+		// ajfxLoadDicService.loadDics();
 		
 	}
 	

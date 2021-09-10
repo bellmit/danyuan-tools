@@ -1,129 +1,129 @@
 [ {
-		dataValue : "北京市",
-		title : "北京市",
-		fyCode : "100"
+		"name" : "北京市",
+		"title" : "北京市",
+		"code" : "100"
 	}, {
-		dataValue : "天津市",
-		title : "天津市",
-		fyCode : "200"
+		"name" : "天津市",
+		"title" : "天津市",
+		"code" : "200"
 	}, {
-		dataValue : "河北省",
-		title : "河北省",
-		fyCode : "300"
+		"name" : "河北省",
+		"title" : "河北省",
+		"code" : "300"
 	}, {
-		dataValue : "山西省",
-		title : "山西省",
-		fyCode : "400"
+		"name" : "山西省",
+		"title" : "山西省",
+		"code" : "400"
 	}, {
-		dataValue : "内蒙古自治区",
-		title : "内蒙古自治区",
-		fyCode : "500"
+		"name" : "内蒙古自治区",
+		"title" : "内蒙古自治区",
+		"code" : "500"
 	}, {
-		dataValue : "辽宁省",
-		title : "辽宁省",
-		fyCode : "600"
+		"name" : "辽宁省",
+		"title" : "辽宁省",
+		"code" : "600"
 	}, {
-		dataValue : "吉林省",
-		title : "吉林省",
-		fyCode : "700"
+		"name" : "吉林省",
+		"title" : "吉林省",
+		"code" : "700"
 	}, {
-		dataValue : "黑龙江省",
-		title : "黑龙江省",
-		fyCode : "800"
+		"name" : "黑龙江省",
+		"title" : "黑龙江省",
+		"code" : "800"
 	}, {
-		dataValue : "上海市",
-		title : "上海市",
-		fyCode : "900"
+		"name" : "上海市",
+		"title" : "上海市",
+		"code" : "900"
 	}, {
-		dataValue : "江苏省",
-		title : "江苏省",
-		fyCode : "A00"
+		"name" : "江苏省",
+		"title" : "江苏省",
+		"code" : "A00"
 	}, {
-		dataValue : "浙江省",
-		title : "浙江省",
-		fyCode : "B00"
+		"name" : "浙江省",
+		"title" : "浙江省",
+		"code" : "B00"
 	}, {
-		dataValue : "安徽省",
-		title : "安徽省",
-		fyCode : "C00"
+		"name" : "安徽省",
+		"title" : "安徽省",
+		"code" : "C00"
 	}, {
-		dataValue : "福建省",
-		title : "福建省",
-		fyCode : "D00"
+		"name" : "福建省",
+		"title" : "福建省",
+		"code" : "D00"
 	}, {
-		dataValue : "江西省",
-		title : "江西省",
-		fyCode : "E00"
+		"name" : "江西省",
+		"title" : "江西省",
+		"code" : "E00"
 	}, {
-		dataValue : "山东省",
-		title : "山东省",
-		fyCode : "F00"
+		"name" : "山东省",
+		"title" : "山东省",
+		"code" : "F00"
 	}, {
-		dataValue : "河南省",
-		title : "河南省",
-		fyCode : "G00"
+		"name" : "河南省",
+		"title" : "河南省",
+		"code" : "G00"
 	}, {
-		dataValue : "湖北省",
-		title : "湖北省",
-		fyCode : "H00"
+		"name" : "湖北省",
+		"title" : "湖北省",
+		"code" : "H00"
 	}, {
-		dataValue : "湖南省",
-		title : "湖南省",
-		fyCode : "I00"
+		"name" : "湖南省",
+		"title" : "湖南省",
+		"code" : "I00"
 	}, {
-		dataValue : "广东省",
-		title : "广东省",
-		fyCode : "J00"
+		"name" : "广东省",
+		"title" : "广东省",
+		"code" : "J00"
 	}, {
-		dataValue : "广西壮族自治区",
-		title : "广西壮族自治区",
-		fyCode : "K00"
+		"name" : "广西壮族自治区",
+		"title" : "广西壮族自治区",
+		"code" : "K00"
 	}, {
-		dataValue : "海南省",
-		title : "海南省",
-		fyCode : "L00"
+		"name" : "海南省",
+		"title" : "海南省",
+		"code" : "L00"
 	}, {
-		dataValue : "重庆市",
-		title : "重庆市",
-		fyCode : "M00"
+		"name" : "重庆市",
+		"title" : "重庆市",
+		"code" : "M00"
 	}, {
-		dataValue : "四川省",
-		title : "四川省",
-		fyCode : "N00"
+		"name" : "四川省",
+		"title" : "四川省",
+		"code" : "N00"
 	}, {
-		dataValue : "贵州省",
-		title : "贵州省",
-		fyCode : "O00"
+		"name" : "贵州省",
+		"title" : "贵州省",
+		"code" : "O00"
 	}, {
-		dataValue : "云南省",
-		title : "云南省",
-		fyCode : "P00"
+		"name" : "云南省",
+		"title" : "云南省",
+		"code" : "P00"
 	}, {
-		dataValue : "西藏自治区",
-		title : "西藏自治区",
-		fyCode : "Q00"
+		"name" : "西藏自治区",
+		"title" : "西藏自治区",
+		"code" : "Q00"
 	}, {
-		dataValue : "陕西省",
-		title : "陕西省",
-		fyCode : "R00"
+		"name" : "陕西省",
+		"title" : "陕西省",
+		"code" : "R00"
 	}, {
-		dataValue : "甘肃省",
-		title : "甘肃省",
-		fyCode : "S00"
+		"name" : "甘肃省",
+		"title" : "甘肃省",
+		"code" : "S00"
 	}, {
-		dataValue : "青海省",
-		title : "青海省",
-		fyCode : "T00"
+		"name" : "青海省",
+		"title" : "青海省",
+		"code" : "T00"
 	}, {
-		dataValue : "宁夏回族自治区",
-		title : "宁夏回族自治区",
-		fyCode : "U00"
+		"name" : "宁夏回族自治区",
+		"title" : "宁夏回族自治区",
+		"code" : "U00"
 	}, {
-		dataValue : "新疆维吾尔自治区",
-		title : "新疆维吾尔自治区",
-		fyCode : "V00"
+		"name" : "新疆维吾尔自治区",
+		"title" : "新疆维吾尔自治区",
+		"code" : "V00"
 	}, {
-		dataValue : "新疆维吾尔自治区高级人民法院生产建设兵团分院",
-		title : "新疆维吾尔自治区高级人民法院生产建设兵团分院",
-		fyCode : "X00"
+		"name" : "新疆维吾尔自治区高级人民法院生产建设兵团分院",
+		"title" : "新疆维吾尔自治区高级人民法院生产建设兵团分院",
+		"code" : "X00"
 	} ]
