@@ -10,7 +10,6 @@ import org.springframework.data.domain.Example;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
-import org.springframework.data.domain.Sort.Order;
 import org.springframework.data.repository.NoRepositoryBean;
 
 /**
@@ -246,29 +245,16 @@ public class BaseServiceImpl<T> implements BaseService<T> {
 
 	@Override
 	public List<T> findAll(Pagination<T> vo) {
+		Sort sort = vo.sort();
 		if (vo.getInfo() == null) {
-			if (vo.getSortName() != null) {
-				Order order;
-				if (vo.getSortOrder().equals("desc")) {
-					order = Order.desc(vo.getSortName());
-				} else {
-					order = Order.asc(vo.getSortName());
-				}
-				Sort sort = Sort.by(order);
+			if (sort != null) {
 				return baseDao.findAll(sort);
 			} else {
 				return baseDao.findAll();
 			}
 		} else {
 			Example<T> example = Example.of(vo.getInfo());
-			if (vo.getSortName() != null) {
-				Order order;
-				if (vo.getSortOrder().equals("desc")) {
-					order = Order.desc(vo.getSortName());
-				} else {
-					order = Order.asc(vo.getSortName());
-				}
-				Sort sort = Sort.by(order);
+			if (sort != null) {
 				return baseDao.findAll(example, sort);
 			} else {
 				return baseDao.findAll(example);
@@ -288,15 +274,9 @@ public class BaseServiceImpl<T> implements BaseService<T> {
 
 	@Override
 	public Page<T> page(Pagination<T> vo) {
+		Sort sort = vo.sort();
 		if (vo.getInfo() == null) {
-			if (vo.getSortName() != null) {
-				Order order;
-				if (vo.getSortOrder().equals("desc")) {
-					order = Order.desc(vo.getSortName());
-				} else {
-					order = Order.asc(vo.getSortName());
-				}
-				Sort sort = Sort.by(order);
+			if (sort != null) {
 				PageRequest request = PageRequest.of(vo.getPageNumber() - 1, vo.getPageSize(), sort);
 				return baseDao.findAll(request);
 			} else {
@@ -305,14 +285,7 @@ public class BaseServiceImpl<T> implements BaseService<T> {
 			}
 		} else {
 			Example<T> example = Example.of(vo.getInfo());
-			if (vo.getSortName() != null) {
-				Order order;
-				if (vo.getSortOrder().equals("desc")) {
-					order = Order.desc(vo.getSortName());
-				} else {
-					order = Order.asc(vo.getSortName());
-				}
-				Sort sort = Sort.by(order);
+			if (sort != null) {
 				PageRequest request = PageRequest.of(vo.getPageNumber() - 1, vo.getPageSize(), sort);
 				return baseDao.findAll(example, request);
 			} else {
@@ -325,7 +298,6 @@ public class BaseServiceImpl<T> implements BaseService<T> {
 
 	/**
 	 * 统计数量
-	 *
 	 * @方法名 count
 	 * @参数 @param info
 	 * @参数 @return

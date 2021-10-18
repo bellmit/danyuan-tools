@@ -1,5 +1,6 @@
 package org.danyuan.application.dbms.tabs.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.danyuan.application.bean.manager.dbms.SysDbmsUserIndexInfo;
@@ -30,7 +31,7 @@ import org.springframework.stereotype.Service;
 public class SysDbmsUserIndexInfoService extends BaseServiceImpl<SysDbmsUserIndexInfo> implements BaseService<SysDbmsUserIndexInfo> {
 	@Autowired
 	private SysDbmsUserIndexInfoDao sysDbmsUserIndexInfoDao;
-	
+
 	/**
 	 * 方法名： findAll
 	 * 功 能： TODO(这里用一句话描述这个方法的作用)
@@ -42,7 +43,7 @@ public class SysDbmsUserIndexInfoService extends BaseServiceImpl<SysDbmsUserInde
 	public List<SysDbmsUserIndexInfo> findAll() {
 		return sysDbmsUserIndexInfoDao.findAllByDeleteFlag();
 	}
-	
+
 	/**
 	 * 方法名： page
 	 * 功 能： TODO(这里用一句话描述这个方法的作用)
@@ -56,19 +57,18 @@ public class SysDbmsUserIndexInfoService extends BaseServiceImpl<SysDbmsUserInde
 	 */
 	public Page<SysDbmsUserIndexInfo> page(SysDbmsUserIndexInfoVo vo) {
 		Example<SysDbmsUserIndexInfo> example = Example.of(vo.getInfo());
-		Sort sort = Sort.by(new Order(Direction.ASC, "userOrder"), new Order(Direction.DESC, "createTime"));
-		if (vo.getSortName() != null && !"".equals(vo.getSortName())) {
-			if (vo.getSortOrder().equals("asc")) {
-				sort = Sort.by(new Order(Direction.ASC, vo.getSortName()));
-			} else {
-				sort = Sort.by(new Order(Direction.DESC, vo.getSortName()));
-			}
+		Sort sort = vo.sort();
+		if (sort == null) {
+			List<Order> orders = new ArrayList<>();
+			Order order = new Order(Direction.ASC, "createTime");
+			orders.add(order);
+			sort = Sort.by(orders);
 		}
 		PageRequest request = PageRequest.of(vo.getPageNumber() - 1, vo.getPageSize(), sort);
 		Page<SysDbmsUserIndexInfo> sourceCodes = sysDbmsUserIndexInfoDao.findAll(example, request);
 		return sourceCodes;
 	}
-	
+
 	/**
 	 * 方法名： chartList
 	 * 功 能： TODO(这里用一句话描述这个方法的作用)

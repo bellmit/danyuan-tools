@@ -40,7 +40,7 @@ public class SysDicNameService extends BaseServiceImpl<SysDicName> implements Ba
 	private SysDicNameDao		sysDicNameDao;
 	@Autowired
 	private SysDicKeyListDao	sysDicKeyListDao;
-	
+
 	/**
 	 * 方法名 ： page
 	 * 功 能 ： TODO(这里用一句话描述这个方法的作用)
@@ -53,27 +53,20 @@ public class SysDicNameService extends BaseServiceImpl<SysDicName> implements Ba
 	 * 参 考 ： @see com.shumeng.application.common.base.BaseService#page(int, int, java.lang.Object, java.util.Map, org.springframework.data.domain.Sort.Order[])
 	 * 作 者 ： Administrator
 	 */
-	
+
 	@Override
 	public Page<SysDicName> page(Pagination<SysDicName> vo) {
-		List<Order> orders = new ArrayList<>();
-		if (vo.getSortName() != null) {
-			Order order;
-			if (vo.getSortOrder().equals("desc")) {
-				order = Order.desc(vo.getSortName());
-			} else {
-				order = Order.asc(vo.getSortName());
-			}
+		Sort sort = vo.sort();
+		if (sort == null) {
+			List<Order> orders = new ArrayList<>();
+			Order order = new Order(Direction.ASC, "createTime");
 			orders.add(order);
-		} else {
-			Order order = new Order(Direction.DESC, "createTime");
-			orders.add(order);
+			sort = Sort.by(orders);
 		}
 		if (vo.getInfo() == null) {
 			vo.setInfo(new SysDicName());
 		}
-		
-		Sort sort = Sort.by(orders);
+
 		PageRequest request = PageRequest.of(vo.getPageNumber() - 1, vo.getPageSize(), sort);
 		return sysDicNameDao.findAll((Specification<SysDicName>) (root, query, cb) -> {
 			if (vo.getInfo().getName() != null) {
@@ -83,7 +76,7 @@ public class SysDicNameService extends BaseServiceImpl<SysDicName> implements Ba
 			}
 		}, request);
 	}
-	
+
 	/**
 	 * 方法名： checkCode
 	 * 功 能： TODO(这里用一句话描述这个方法的作用)
@@ -104,7 +97,7 @@ public class SysDicNameService extends BaseServiceImpl<SysDicName> implements Ba
 			return false;
 		}
 	}
-	
+
 	/**
 	 * 方法名： findkeyList
 	 * 功 能： TODO(这里用一句话描述这个方法的作用)
@@ -121,7 +114,7 @@ public class SysDicNameService extends BaseServiceImpl<SysDicName> implements Ba
 			info = reinfo.get();
 			SysDicKeyList key = new SysDicKeyList();
 			key.setNameUuid(info.getUuid());
-			
+
 			Example<SysDicKeyList> ke = Example.of(key);
 			Order[] order = { new Order(Direction.ASC, "keyOrder"), new Order(Direction.ASC, "createTime") };
 			Sort sort = Sort.by(order);
@@ -130,5 +123,5 @@ public class SysDicNameService extends BaseServiceImpl<SysDicName> implements Ba
 			return null;
 		}
 	}
-	
+
 }

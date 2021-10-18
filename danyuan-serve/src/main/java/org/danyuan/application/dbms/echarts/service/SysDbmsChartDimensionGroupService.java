@@ -34,7 +34,7 @@ import org.springframework.stereotype.Service;
 public class SysDbmsChartDimensionGroupService extends BaseServiceImpl<SysDbmsChartDimensionGroup> implements BaseService<SysDbmsChartDimensionGroup> {
 	@Autowired
 	SysDbmsChartDimensionGroupDao sysDbmsChartDimensionGroupDao;
-	
+
 	/**
 	 * 方法名 ： page
 	 * 功 能 ： TODO(这里用一句话描述这个方法的作用)
@@ -47,32 +47,25 @@ public class SysDbmsChartDimensionGroupService extends BaseServiceImpl<SysDbmsCh
 	 * 参 考 ： @see com.shumeng.application.common.base.BaseService#page(int, int, java.lang.Object, java.util.Map, org.springframework.data.domain.Sort.Order[])
 	 * 作 者 ： Administrator
 	 */
-	
+
 	@Override
 	public Page<SysDbmsChartDimensionGroup> page(Pagination<SysDbmsChartDimensionGroup> vo) {
-		List<Order> orders = new ArrayList<>();
-		if (vo.getSortName() != null) {
-			Order order;
-			if (vo.getSortOrder().equals("desc")) {
-				order = Order.desc(vo.getSortName());
-			} else {
-				order = Order.asc(vo.getSortName());
-			}
-			orders.add(order);
-		} else {
+		Sort sort = vo.sort();
+		if (sort == null) {
+			List<Order> orders = new ArrayList<>();
 			Order order = new Order(Direction.ASC, "createTime");
 			orders.add(order);
+			sort = Sort.by(orders);
 		}
 		if (vo.getInfo() == null) {
 			vo.setInfo(new SysDbmsChartDimensionGroup());
 		}
-		
-		Sort sort = Sort.by(orders);
+
 		PageRequest request = PageRequest.of(vo.getPageNumber() - 1, vo.getPageSize(), sort);
-		
+
 		return sysDbmsChartDimensionGroupDao.findAll(new Specification<SysDbmsChartDimensionGroup>() {
 			private static final long serialVersionUID = 1L;
-			
+
 			@Override
 			public Predicate toPredicate(Root<SysDbmsChartDimensionGroup> root, CriteriaQuery<?> query, CriteriaBuilder cb) {
 				return cb.like(root.get("title"), "%" + vo.getInfo().getTitle() + "%");

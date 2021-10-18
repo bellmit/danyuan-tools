@@ -64,16 +64,16 @@
 			<id>website</id>
 			<url>scp://webhost.company.com/www/website</url>
 		</site>
-		<repository>
-			<id>releases</id>
-			<name>maven-releases</name>
-			<url>http://192.168.0.103:9001/repository/maven-releases/</url>
-		</repository>
-		<snapshotRepository>
-			<id>snapshots</id>
-			<name>maven-snapshots</name>
-			<url>http://192.168.0.103:9001/repository/maven-snapshots/</url>
-		</snapshotRepository>
+<!-- 		<repository> -->
+<!-- 			<id>releases</id> -->
+<!-- 			<name>maven-releases</name> -->
+<!-- 			<url>http://192.168.0.103:9001/repository/maven-releases/</url> -->
+<!-- 		</repository> -->
+<!-- 		<snapshotRepository> -->
+<!-- 			<id>snapshots</id> -->
+<!-- 			<name>maven-snapshots</name> -->
+<!-- 			<url>http://192.168.0.103:9001/repository/maven-snapshots/</url> -->
+<!-- 		</snapshotRepository> -->
 	</distributionManagement>
 
 	<dependencyManagement>
@@ -174,14 +174,9 @@
 				<version>1.2</version>
 			</dependency>
 			<dependency>
-				<groupId>org.apache.commons</groupId>
-				<artifactId>commons-beanutils</artifactId>
-				<version>1.9.4</version>
-			</dependency>
-			<dependency>
-				<groupId>org.apache.commons</groupId>
-				<artifactId>commons-collections</artifactId>
-				<version>3.2.2</version>
+			    <groupId>commons-beanutils</groupId>
+			    <artifactId>commons-beanutils</artifactId>
+			    <version>1.9.4</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>

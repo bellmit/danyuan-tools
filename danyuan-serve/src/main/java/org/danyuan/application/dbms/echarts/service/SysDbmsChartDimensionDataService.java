@@ -27,10 +27,10 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class SysDbmsChartDimensionDataService extends BaseServiceImpl<SysDbmsChartDimensionData> implements BaseService<SysDbmsChartDimensionData> {
-	
+
 	@Autowired
 	SysDbmsChartDimensionDataDao sysDbmsChartDimensionDataDao;
-	
+
 	/**
 	 * 方法名 ： page
 	 * 功 能 ： TODO(这里用一句话描述这个方法的作用)
@@ -43,29 +43,21 @@ public class SysDbmsChartDimensionDataService extends BaseServiceImpl<SysDbmsCha
 	 * 参 考 ： @see com.shumeng.application.common.base.BaseService#page(int, int, java.lang.Object, java.util.Map, org.springframework.data.domain.Sort.Order[])
 	 * 作 者 ： Administrator
 	 */
-	
+
 	@Override
 	public Page<SysDbmsChartDimensionData> page(Pagination<SysDbmsChartDimensionData> vo) {
-		List<Order> orders = new ArrayList<>();
-		
-		if (vo.getSortName() != null) {
-			Order order;
-			if (vo.getSortOrder().equals("desc")) {
-				order = Order.desc(vo.getSortName());
-			} else {
-				order = Order.asc(vo.getSortName());
-			}
-			orders.add(order);
-		} else {
+		Sort sort = vo.sort();
+		if (sort == null) {
+			List<Order> orders = new ArrayList<>();
 			Order order = new Order(Direction.ASC, "createTime");
 			orders.add(order);
+			sort = Sort.by(orders);
 		}
 		if (vo.getInfo() == null) {
 			vo.setInfo(new SysDbmsChartDimensionData());
 		}
-		
+
 		Example<SysDbmsChartDimensionData> example = Example.of(vo.getInfo());
-		Sort sort = Sort.by(orders);
 		PageRequest request = PageRequest.of(vo.getPageNumber() - 1, vo.getPageSize(), sort);
 		return sysDbmsChartDimensionDataDao.findAll(example, request);
 	}

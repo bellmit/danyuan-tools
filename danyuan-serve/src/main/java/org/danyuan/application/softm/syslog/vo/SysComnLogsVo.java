@@ -14,20 +14,19 @@ import org.danyuan.application.common.base.Pagination;
  * 版 本 ： V1.0
  */
 public class SysComnLogsVo extends Pagination<SysComnLogs> {
-	
+
 	String	strartCreateTime;
 	String	endCreateTime;
-	
+
 	/**
 	 * 方法名 ： getStrartCreateTime <br />
 	 * 功 能 ： 返回变量 strartCreateTime 的值 <br />
-	 *
 	 * @return: String
 	 */
 	public String getStrartCreateTime() {
 		return strartCreateTime;
 	}
-	
+
 	/**
 	 * 方法名 ： setStrartCreateTime <br />
 	 * 功 能 ： 设置变量 strartCreateTime 的值
@@ -35,17 +34,16 @@ public class SysComnLogsVo extends Pagination<SysComnLogs> {
 	public void setStrartCreateTime(String strartCreateTime) {
 		this.strartCreateTime = strartCreateTime;
 	}
-	
+
 	/**
 	 * 方法名 ： getEndCreateTime <br />
 	 * 功 能 ： 返回变量 endCreateTime 的值 <br />
-	 *
 	 * @return: String
 	 */
 	public String getEndCreateTime() {
 		return endCreateTime;
 	}
-	
+
 	/**
 	 * 方法名 ： setEndCreateTime <br />
 	 * 功 能 ： 设置变量 endCreateTime 的值
@@ -59,12 +57,12 @@ public class SysComnLogsVo extends Pagination<SysComnLogs> {
 	 * 功 能 ： TODO(这里用一句话描述这个方法的作用)
 	 * 参 数 ： @return
 	 * 参 考 ： @see java.lang.Object#toString()
-	 * 作 者 ： Administrator
+	 * 作 者 ： wth
 	 */
-	
+
 	@Override
 	public String toString() {
-		return "SysComnLogsVo [pageNumber=" + pageNumber + ", pageSize=" + pageSize + ", uuid=" + uuid + ", searchText=" + searchText + ", username=" + username + ", info=" + info + "]";
+		return "SysComnLogsVo [strartCreateTime=" + strartCreateTime + ", endCreateTime=" + endCreateTime + "]";
 	}
 	
 }

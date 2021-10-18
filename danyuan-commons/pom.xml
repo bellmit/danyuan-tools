@@ -55,13 +55,10 @@
 			<artifactId>json</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>org.apache.commons</groupId>
-			<artifactId>commons-beanutils</artifactId>
+		    <groupId>commons-beanutils</groupId>
+		    <artifactId>commons-beanutils</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>org.apache.commons</groupId>
-			<artifactId>commons-collections</artifactId>
-		</dependency>
+
 	</dependencies>
 
 </project>

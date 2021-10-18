@@ -51,23 +51,18 @@ public class SysDicKeyListService extends BaseServiceImpl<SysDicKeyList> impleme
 	
 	@Override
 	public Page<SysDicKeyList> page(Pagination<SysDicKeyList> vo) {
-		List<Order> orders = new ArrayList<>();
-		orders.add(new Order(Direction.ASC, "keyOrder"));
-		if (vo.getSortName() != null) {
-			Order order;
-			if (vo.getSortOrder().equals("desc")) {
-				order = Order.desc(vo.getSortName());
-			} else {
-				order = Order.asc(vo.getSortName());
-			}
+		Sort sort = vo.sort();
+		if (sort == null) {
+			List<Order> orders = new ArrayList<>();
+			Order order = new Order(Direction.ASC, "keyOrder");
 			orders.add(order);
+			sort = Sort.by(orders);
 		}
 		if (vo.getInfo() == null) {
 			vo.setInfo(new SysDicKeyList());
 		}
 		
 		Example<SysDicKeyList> example = Example.of(vo.getInfo());
-		Sort sort = Sort.by(orders);
 		
 		PageRequest request = PageRequest.of(vo.getPageNumber() - 1, vo.getPageSize(), sort);
 		Page<SysDicKeyList> page = sysDicKeyListDao.findAll(example, request);
