@@ -49,3 +49,11 @@ org.danyuan.application.common.base# danyuan-tools
 ### 4.3 redis
 	redis
 ### 4.4 
+
+
+
+# 常用命令
+mvn clean install
+mvn install docker:build -DpushImage
+mvn install -Dmaven.test.skip=true
+mvn clean
