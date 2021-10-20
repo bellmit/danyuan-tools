@@ -12,30 +12,32 @@ package org.danyuan.application.common.base;
  */
 public class SortParameters {
 	
-	public Integer	order;		// 顺序
+	public Integer	sortIndex;	// 顺序
 	public String	sortName;	// 排序字段
 	public String	sortOrder;	// 排序方式 desc，asc default asc
 	
 	/**
-	 * 方法名 ： getOrder
-	 * 功 能 ： 返回变量 order 的值
+	 * 方法名 ： getSortIndex
+	 * 功 能 ： 返回变量 sortIndex 的值
+	 * 
 	 * @return: Integer
 	 */
-	public Integer getOrder() {
-		return order;
+	public Integer getSortIndex() {
+		return sortIndex;
 	}
 	
 	/**
-	 * 方法名 ： setOrder
-	 * 功 能 ： 设置变量 order 的值
+	 * 方法名 ： setSortIndex
+	 * 功 能 ： 设置变量 sortIndex 的值
 	 */
-	public void setOrder(Integer order) {
-		this.order = order;
+	public void setSortIndex(Integer sortIndex) {
+		this.sortIndex = sortIndex;
 	}
 	
 	/**
 	 * 方法名 ： getSortName
 	 * 功 能 ： 返回变量 sortName 的值
+	 * 
 	 * @return: String
 	 */
 	public String getSortName() {
@@ -53,6 +55,7 @@ public class SortParameters {
 	/**
 	 * 方法名 ： getSortOrder
 	 * 功 能 ： 返回变量 sortOrder 的值
+	 * 
 	 * @return: String
 	 */
 	public String getSortOrder() {
