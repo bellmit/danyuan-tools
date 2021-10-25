@@ -20,7 +20,7 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class AppInfo implements ApplicationRunner {
-
+	
 	@Value("${spring.datasource.platform}")
 	private String		plantform;
 	@Value("${spring.datasource.driver-class-name}")
@@ -37,10 +37,10 @@ public class AppInfo implements ApplicationRunner {
 	private String		port;
 	@Value("${spring.application.name}")
 	private String		id;
-
+	
 	@Autowired
 	private ServeFegin	serveFegin;
-
+	
 	/**
 	 * 方法名 ： run
 	 * 功 能 ： TODO(这里用一句话描述这个方法的作用)
@@ -49,20 +49,20 @@ public class AppInfo implements ApplicationRunner {
 	 * 参 考 ： @see org.springframework.boot.ApplicationRunner#run(org.springframework.boot.ApplicationArguments)
 	 * 作 者 ： Administrator
 	 */
-
+	
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
 		SysDbmsTabsJdbcInfo info = new SysDbmsTabsJdbcInfo();
 		info.setUuid(id);
-		info.setDbType(plantform);
+		info.setPlatform(plantform);
 		info.setDriver(driverClassName);
 		info.setUsername(username);
 		info.setPassword(password);
 		info.setIp(ip);
 		info.setPort(port);
-
+		
 		serveFegin.save(info);
-
+		
 	}
-
+	
 }

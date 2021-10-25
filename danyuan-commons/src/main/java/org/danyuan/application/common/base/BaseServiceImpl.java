@@ -293,13 +293,10 @@ public class BaseServiceImpl<T> implements BaseService<T> {
 				public Predicate toPredicate(Root<T> root, CriteriaQuery<?> query, CriteriaBuilder criteriaBuilder) {
 					List<Predicate> list = new ArrayList<>();
 					for (SearchParameters parameter : vo.getSearchList()) {
-						
 						list.add(paramterPredicate(root, query, criteriaBuilder, parameter));
 					}
-					
 					return criteriaBuilder.and(list.toArray(new Predicate[list.size()]));
 				}
-				
 			};
 			if (sort != null) {
 				PageRequest request = PageRequest.of(vo.getPageNumber() - 1, vo.getPageSize(), sort);
@@ -344,7 +341,6 @@ public class BaseServiceImpl<T> implements BaseService<T> {
 	 */
 	protected Predicate paramterPredicate(Root<T> root, CriteriaQuery<?> query, CriteriaBuilder criteriaBuilder, SearchParameters parameter) {
 		Predicate predicate = null;
-		
 		switch (parameter.getOperator()) {
 			case "and":
 				predicate = criteriaBuilder.and(paramterOperatePredicate(root, query, criteriaBuilder, parameter));
@@ -364,7 +360,6 @@ public class BaseServiceImpl<T> implements BaseService<T> {
 			}
 			predicate = criteriaBuilder.and(list.toArray(new Predicate[list.size()]));
 		}
-		
 		return predicate;
 	}
 	
@@ -390,6 +385,10 @@ public class BaseServiceImpl<T> implements BaseService<T> {
 				// eq("=", "相等"),
 				predicate = criteriaBuilder.equal(root.get(parameter.getColumn()), parameter.getData());
 				break;
+			case "notEq":
+				// notEq("!=", "不相等"),
+				predicate = criteriaBuilder.notEqual(root.get(parameter.getColumn()), parameter.getData());
+				break;
 			case "less":
 				// less("<", "小于"),
 				predicate = criteriaBuilder.lessThan(root.get(parameter.getColumn()), parameter.getData());
@@ -410,21 +409,13 @@ public class BaseServiceImpl<T> implements BaseService<T> {
 				// like
 				predicate = criteriaBuilder.like(root.get(parameter.getColumn()), "%" + parameter.getData().replace(" ", "%") + "%");
 				break;
-			case "is null":
+			case "isNull":
 				// is null
 				predicate = criteriaBuilder.isNull(root.get(parameter.getColumn()));
 				break;
-			case "is not null":
+			case "isNotNull":
 				// is not null
 				predicate = criteriaBuilder.isNotNull(root.get(parameter.getColumn()));
-				break;
-			case "is empty":
-				// is empty
-				predicate = criteriaBuilder.isEmpty(root.get(parameter.getColumn()));
-				break;
-			case "is not empty":
-				// is not empty
-				predicate = criteriaBuilder.isNotEmpty(root.get(parameter.getColumn()));
 				break;
 			default:
 				predicate = criteriaBuilder.equal(root.get(parameter.getColumn()), parameter.getData());

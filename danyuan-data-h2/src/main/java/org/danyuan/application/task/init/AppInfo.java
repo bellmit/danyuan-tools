@@ -54,7 +54,7 @@ public class AppInfo implements ApplicationRunner {
 	public void run(ApplicationArguments args) throws Exception {
 		SysDbmsTabsJdbcInfo info = new SysDbmsTabsJdbcInfo();
 		info.setUuid(id);
-		info.setDbType(plantform);
+		info.setPlatform(plantform);
 		info.setDriver(driverClassName);
 		info.setUsername(username);
 		info.setPassword(password);

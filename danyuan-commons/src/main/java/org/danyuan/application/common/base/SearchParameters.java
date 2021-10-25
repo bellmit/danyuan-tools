@@ -18,6 +18,8 @@ public class SearchParameters {
 	private String					operator;
 	// 字段名
 	private String					column;
+	// 字段名
+	private String					title;
 	// 连接符号
 	private String					symbol;
 	// 查询数据
@@ -113,6 +115,24 @@ public class SearchParameters {
 	 */
 	public void setSubParameters(List<SearchParameters> subParameters) {
 		this.subParameters = subParameters;
+	}
+	
+	/**
+	 * 方法名 ： getTitle
+	 * 功 能 ： 返回变量 title 的值
+	 * 
+	 * @return: String
+	 */
+	public String getTitle() {
+		return title;
+	}
+	
+	/**
+	 * 方法名 ： setTitle
+	 * 功 能 ： 设置变量 title 的值
+	 */
+	public void setTitle(String title) {
+		this.title = title;
 	}
 	
 }

@@ -14,6 +14,7 @@ public class SortParameters {
 	
 	public Integer	sortIndex;	// 顺序
 	public String	sortName;	// 排序字段
+	public String	sortTitle;	// 排序字段
 	public String	sortOrder;	// 排序方式 desc，asc default asc
 	
 	/**
@@ -68,6 +69,24 @@ public class SortParameters {
 	 */
 	public void setSortOrder(String sortOrder) {
 		this.sortOrder = sortOrder;
+	}
+	
+	/**
+	 * 方法名 ： getSortTitle
+	 * 功 能 ： 返回变量 sortTitle 的值
+	 * 
+	 * @return: String
+	 */
+	public String getSortTitle() {
+		return sortTitle;
+	}
+	
+	/**
+	 * 方法名 ： setSortTitle
+	 * 功 能 ： 设置变量 sortTitle 的值
+	 */
+	public void setSortTitle(String sortTitle) {
+		this.sortTitle = sortTitle;
 	}
 	
 }
