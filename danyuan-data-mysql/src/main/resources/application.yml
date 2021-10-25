@@ -1,6 +1,6 @@
 server:
   port: 8004
-  servlet:    context-path: /data
+  servlet:    context-path: /database
   
 
 spring:

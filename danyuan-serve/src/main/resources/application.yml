@@ -11,8 +11,3 @@ spring:
     - nacos
     - h2  
     - hikari
-
-app:
-  name: ${spring.application.name}
-  version: @project.version@
-  

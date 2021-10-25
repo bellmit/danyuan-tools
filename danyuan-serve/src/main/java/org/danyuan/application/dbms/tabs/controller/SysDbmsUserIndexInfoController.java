@@ -9,12 +9,9 @@ import org.danyuan.application.dbms.tabs.service.SysDbmsUserIndexInfoService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.servlet.ModelAndView;
 
 /**
  * 文件名 ： SysDbmsUserIndexInfoController.java
@@ -43,13 +40,4 @@ public class SysDbmsUserIndexInfoController extends BaseControllerImpl<SysDbmsUs
 		
 	}
 	
-	@GetMapping("/detail/{uuid}")
-	public ModelAndView name(@PathVariable("uuid") String uuid) {
-		logger.info("detail", SysDbmsUserIndexInfoController.class);
-		ModelAndView modelAndView = new ModelAndView("dbms/tabs/sysdbmsuserindexinfodetail");
-		SysDbmsUserIndexInfo info = new SysDbmsUserIndexInfo();
-		info.setUuid(uuid);
-		modelAndView.addObject("sysDbmsUserIndexInfo", sysDbmsUserIndexInfoService.findOne(info));
-		return modelAndView;
-	}
 }
