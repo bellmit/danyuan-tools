@@ -80,10 +80,6 @@ public class SysDbmsTabsColsInfo extends BaseEntity implements Serializable {
 	@Column(name = "cols_valign")
 	private String				colsValign;
 	
-	// 字段列表展示隐藏
-	@Column(name = "page_list", precision = 10)
-	private Integer				pageList;
-	
 	// 用户查询显示图标
 	@Column(name = "user_icon")
 	private String				userIcon;
@@ -91,10 +87,6 @@ public class SysDbmsTabsColsInfo extends BaseEntity implements Serializable {
 	// 每列的宽度
 	@Column(name = "cols_width")
 	private Integer				colsWidth;
-	
-	// 默认为true显示该列，设为false则禁用列项目的选项卡。
-	@Column(name = "dime_flag", precision = 3)
-	private Boolean				dimeFlag;
 	
 	// 默认为true显示该列，设为false则隐藏该列
 	@Column(name = "cols_visible")
@@ -212,6 +204,7 @@ public class SysDbmsTabsColsInfo extends BaseEntity implements Serializable {
 	/**
 	 * 方法名 ： getTabsUuid
 	 * 功 能 ： 返回变量 tabsUuid 表id 的值
+	 * 
 	 * @return: String
 	 */
 	public String getTabsUuid() {
@@ -229,6 +222,7 @@ public class SysDbmsTabsColsInfo extends BaseEntity implements Serializable {
 	/**
 	 * 方法名 ： getColsDesc
 	 * 功 能 ： 返回变量 colsDesc 字段含义 的值
+	 * 
 	 * @return: String
 	 */
 	public String getColsDesc() {
@@ -246,6 +240,7 @@ public class SysDbmsTabsColsInfo extends BaseEntity implements Serializable {
 	/**
 	 * 方法名 ： getColsName
 	 * 功 能 ： 返回变量 colsName 字段名 的值
+	 * 
 	 * @return: String
 	 */
 	public String getColsName() {
@@ -263,6 +258,7 @@ public class SysDbmsTabsColsInfo extends BaseEntity implements Serializable {
 	/**
 	 * 方法名 ： getColsLength
 	 * 功 能 ： 返回变量 colsLength 字段长度 的值
+	 * 
 	 * @return: String
 	 */
 	public Integer getColsLength() {
@@ -280,6 +276,7 @@ public class SysDbmsTabsColsInfo extends BaseEntity implements Serializable {
 	/**
 	 * 方法名 ： getDataPrecision
 	 * 功 能 ： 返回变量 dataPrecision 的值
+	 * 
 	 * @return: String
 	 */
 	public Integer getDataPrecision() {
@@ -297,6 +294,7 @@ public class SysDbmsTabsColsInfo extends BaseEntity implements Serializable {
 	/**
 	 * 方法名 ： getUseful
 	 * 功 能 ： 返回变量 useful 停用标记 的值
+	 * 
 	 * @return: String
 	 */
 	public Integer getUseful() {
@@ -314,6 +312,7 @@ public class SysDbmsTabsColsInfo extends BaseEntity implements Serializable {
 	/**
 	 * 方法名 ： getUserIndex
 	 * 功 能 ： 返回变量 userIndex 用户查询列配置 的值
+	 * 
 	 * @return: String
 	 */
 	public String getUserIndex() {
@@ -331,6 +330,7 @@ public class SysDbmsTabsColsInfo extends BaseEntity implements Serializable {
 	/**
 	 * 方法名 ： getColsOrder
 	 * 功 能 ： 返回变量 colsOrder 字段顺序 的值
+	 * 
 	 * @return: String
 	 */
 	public Integer getColsOrder() {
@@ -348,6 +348,7 @@ public class SysDbmsTabsColsInfo extends BaseEntity implements Serializable {
 	/**
 	 * 方法名 ： getColsType
 	 * 功 能 ： 返回变量 colsType 字段类型（varchar,number,text） 的值
+	 * 
 	 * @return: String
 	 */
 	public String getColsType() {
@@ -365,6 +366,7 @@ public class SysDbmsTabsColsInfo extends BaseEntity implements Serializable {
 	/**
 	 * 方法名 ： getNullable
 	 * 功 能 ： 返回变量 nullable 的值
+	 * 
 	 * @return: String
 	 */
 	public String getNullable() {
@@ -374,6 +376,7 @@ public class SysDbmsTabsColsInfo extends BaseEntity implements Serializable {
 	/**
 	 * 方法名 ： getColsSort
 	 * 功 能 ： 返回变量 colsSort 数据排序 的值
+	 * 
 	 * @return: String
 	 */
 	public String getColsSort() {
@@ -391,6 +394,7 @@ public class SysDbmsTabsColsInfo extends BaseEntity implements Serializable {
 	/**
 	 * 方法名 ： getDataScale
 	 * 功 能 ： 返回变量 dataScale 的值
+	 * 
 	 * @return: String
 	 */
 	public Integer getDataScale() {
@@ -408,6 +412,7 @@ public class SysDbmsTabsColsInfo extends BaseEntity implements Serializable {
 	/**
 	 * 方法名 ： getColsSwitchable
 	 * 功 能 ： 返回变量 colsSwitchable 默认为true显示该列，设为false则禁用列项目的选项卡。 的值
+	 * 
 	 * @return: String
 	 */
 	public Boolean getColsSwitchable() {
@@ -425,6 +430,7 @@ public class SysDbmsTabsColsInfo extends BaseEntity implements Serializable {
 	/**
 	 * 方法名 ： getColsValign
 	 * 功 能 ： 返回变量 colsValign 对齐方式 的值
+	 * 
 	 * @return: String
 	 */
 	public String getColsValign() {
@@ -440,25 +446,9 @@ public class SysDbmsTabsColsInfo extends BaseEntity implements Serializable {
 	}
 	
 	/**
-	 * 方法名 ： getPageList
-	 * 功 能 ： 返回变量 pageList 字段列表展示隐藏 的值
-	 * @return: String
-	 */
-	public Integer getPageList() {
-		return pageList;
-	}
-	
-	/**
-	 * 方法名 ： setPageList
-	 * 功 能 ： 设置变量 pageList 字段列表展示隐藏 的值
-	 */
-	public void setPageList(Integer pageList) {
-		this.pageList = pageList;
-	}
-	
-	/**
 	 * 方法名 ： getUserIcon
 	 * 功 能 ： 返回变量 userIcon 用户查询显示图标 的值
+	 * 
 	 * @return: String
 	 */
 	public String getUserIcon() {
@@ -476,6 +466,7 @@ public class SysDbmsTabsColsInfo extends BaseEntity implements Serializable {
 	/**
 	 * 方法名 ： getColsWidth
 	 * 功 能 ： 返回变量 colsWidth 每列的宽度 的值
+	 * 
 	 * @return: String
 	 */
 	public Integer getColsWidth() {
@@ -491,25 +482,9 @@ public class SysDbmsTabsColsInfo extends BaseEntity implements Serializable {
 	}
 	
 	/**
-	 * 方法名 ： getDimeFlag
-	 * 功 能 ： 返回变量 dimeFlag 默认为true显示该列，设为false则禁用列项目的选项卡。 的值
-	 * @return: String
-	 */
-	public Boolean getDimeFlag() {
-		return dimeFlag;
-	}
-	
-	/**
-	 * 方法名 ： setDimeFlag
-	 * 功 能 ： 设置变量 dimeFlag 默认为true显示该列，设为false则禁用列项目的选项卡。 的值
-	 */
-	public void setDimeFlag(Boolean dimeFlag) {
-		this.dimeFlag = dimeFlag;
-	}
-	
-	/**
 	 * 方法名 ： getColsVisible
 	 * 功 能 ： 返回变量 colsVisible 默认为true显示该列，设为false则隐藏该列 的值
+	 * 
 	 * @return: String
 	 */
 	public Boolean getColsVisible() {
@@ -527,6 +502,7 @@ public class SysDbmsTabsColsInfo extends BaseEntity implements Serializable {
 	/**
 	 * 方法名 ： getColsDefault
 	 * 功 能 ： 返回变量 colsDefault 的值
+	 * 
 	 * @return: String
 	 */
 	public String getColsDefault() {
@@ -544,6 +520,7 @@ public class SysDbmsTabsColsInfo extends BaseEntity implements Serializable {
 	/**
 	 * 方法名 ： getColsAlign
 	 * 功 能 ： 返回变量 colsAlign 对齐方式 的值
+	 * 
 	 * @return: String
 	 */
 	public String getColsAlign() {

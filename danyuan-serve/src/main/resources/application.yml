@@ -9,5 +9,6 @@ spring:
   profiles:
     active:
     - nacos
-    - h2  
+    - h2
     - hikari
+    - redis
