@@ -13,4 +13,4 @@ spring:
         - id: danyuan-serve
           uri: lb://danyuan-serve
           predicates:
-            - Path=/serve/**              
+            - Path=/serve/**         
