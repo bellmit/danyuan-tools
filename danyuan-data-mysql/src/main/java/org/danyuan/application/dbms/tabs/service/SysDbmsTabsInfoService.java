@@ -1,12 +1,18 @@
 package org.danyuan.application.dbms.tabs.service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.danyuan.application.bean.manager.dbms.SysDbmsTabsInfo;
 import org.danyuan.application.common.base.BaseService;
 import org.danyuan.application.common.base.BaseServiceImpl;
 import org.danyuan.application.common.base.Pagination;
+import org.danyuan.application.dbms.tabs.dao.SysDbmsTabsInfoDao;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 /**
@@ -23,7 +29,10 @@ import org.springframework.stereotype.Service;
 public class SysDbmsTabsInfoService extends BaseServiceImpl<SysDbmsTabsInfo> implements BaseService<SysDbmsTabsInfo> {
 	
 	//
-	private static final Logger logger = LoggerFactory.getLogger(SysDbmsTabsInfoService.class);
+	private static final Logger	logger	= LoggerFactory.getLogger(SysDbmsTabsInfoService.class);
+	
+	@Autowired
+	SysDbmsTabsInfoDao			sysDbmsTabsInfoDao;
 	
 	/**
 	 * 方法名： findAllByTableUuid
@@ -34,10 +43,22 @@ public class SysDbmsTabsInfoService extends BaseServiceImpl<SysDbmsTabsInfo> imp
 	 * 作 者 ： Administrator
 	 * @throws
 	 */
-	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public Page<SysDbmsTabsInfo> findAllByTableUuid(Pagination<SysDbmsTabsInfo> vo) {
-		logger.error("微服务访问{}开始。", vo.getInfo().getJdbcUuid());
-		return null;
+		logger.info("微服务访问{}开始。", vo.getInfo().getJdbcUuid());
+		String tableName = vo.getInfo() != null && vo.getInfo().getTabsName() != null ? vo.getInfo().getTabsName().toUpperCase() : null;
+		
+		List<String> list = null;
+		if (vo.getList() != null) {
+			for (SysDbmsTabsInfo sysDbmsTabsInfo : vo.getList()) {
+				if (list == null) {
+					list = new ArrayList<>();
+				}
+				list.add(sysDbmsTabsInfo.getTabsName());
+			}
+		}
+		PageRequest request = PageRequest.of(vo.getPageNumber() - 1, vo.getPageSize());
+		Page<SysDbmsTabsInfo> page = sysDbmsTabsInfoDao.findAllByTableUuid(vo.getInfo().getJdbcUuid(), tableName, list, request);
+		return page;
 	}
 	
 }

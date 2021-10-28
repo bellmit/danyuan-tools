@@ -1,10 +1,10 @@
 server:
   port: 8004
-  servlet:    context-path: /database
+  servlet:    context-path: /data
   
 
 spring:
-  application:    name: danyuan-serve-mysql
+  application:    name: danyuan-data-mysql
   banner:    charset: utf-8
   profiles:
     active:

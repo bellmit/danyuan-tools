@@ -20,15 +20,15 @@ import org.springframework.data.domain.Sort.Order;
  */
 public class Pagination<T> {
 	
-	public Integer				pageNumber;
-	public Integer				pageSize;
+	public Integer				pageNumber	= 10;
+	public Integer				pageSize	= 1;
 	public String				uuid;
 	public String				username;
 	List<T>						list;
 	List<SearchParameters>		searchList;
 	List<SortParameters>		sortList;
 	public T					info;
-	public Map<String, String>	map	= new HashMap<>();
+	public Map<String, String>	map			= new HashMap<>();
 	
 	/**
 	 * 方法名 ： getInfo
