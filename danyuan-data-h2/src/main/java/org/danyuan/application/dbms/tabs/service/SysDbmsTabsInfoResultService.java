@@ -46,7 +46,7 @@ public class SysDbmsTabsInfoResultService extends BaseServiceImpl<SysDbmsTabsInf
 	 */
 	public Page<SysDbmsTabsInfoResult> findAllByTableUuid(Pagination<SysDbmsTabsInfo> vo) {
 		logger.info("微服务访问{}开始。", vo.getInfo().getJdbcUuid());
-		String tableName = vo.getInfo() != null && vo.getInfo().getTabsName() != null ? vo.getInfo().getTabsName().toUpperCase() : null;
+		String tableName = vo.getInfo().getTabsName() != null ? vo.getInfo().getTabsName().toUpperCase() : null;
 		
 		List<String> list = null;
 		if (vo.getList() != null) {
@@ -58,7 +58,7 @@ public class SysDbmsTabsInfoResultService extends BaseServiceImpl<SysDbmsTabsInf
 			}
 		}
 		PageRequest request = PageRequest.of(vo.getPageNumber() - 1, vo.getPageSize());
-		Page<SysDbmsTabsInfoResult> page = sysDbmsTabsInfoResultDao.findAllByTableUuid(vo.getInfo().getJdbcUuid(), request);
+		Page<SysDbmsTabsInfoResult> page = sysDbmsTabsInfoResultDao.findAllByTableUuid(vo.getInfo().getJdbcUuid(), tableName, list, request);
 		return page;
 	}
 	

@@ -4,11 +4,13 @@ import java.util.List;
 
 import org.danyuan.application.bean.manager.dbms.SysDbmsTabsInfo;
 import org.danyuan.application.common.base.BaseDao;
+import org.danyuan.application.dbms.tabs.po.SysDbmsTabsInfoResult;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -24,7 +26,7 @@ import org.springframework.stereotype.Repository;
 @Repository("sysDbmsTabsInfoDao")
 @DynamicUpdate(true)
 @DynamicInsert(true)
-public interface SysDbmsTabsInfoDao extends BaseDao<SysDbmsTabsInfo> {
+public interface SysDbmsTabsInfoResultDao extends BaseDao<SysDbmsTabsInfoResult> {
 	
 	/**
 	 * @param request
@@ -38,14 +40,21 @@ public interface SysDbmsTabsInfoDao extends BaseDao<SysDbmsTabsInfo> {
 	 * @throws
 	 */
 	@Query(value = "select UUID() AS uuid,"
-			+ "'?1' as jdbc_uuid,'MYSQL' AS db_type,"
-			+ " CONCAT(T.`TABLE_SCHEMA`,'.' ,T.`TABLE_NAME`) AS tabs_name,"
+			+ " :jdbcUuid as jdbc_uuid,'MYSQL' AS db_type,"
+			+ " CONCAT(t.`TABLE_SCHEMA`,'.' ,t.`TABLE_NAME`) AS tabs_name,"
 			+ "'WEIFENLEI' as type_uuid,t.`TABLE_COMMENT`  AS tabs_desc,t.`TABLE_ROWS` AS tabs_rows   "
 			+ " from information_schema.tables t "
-			+ " where t.table_schema !='INFORMATION_SCHEMA' "
-			+ " and TABLE_TYPE = 'TABLE' "
-			+ " and if(?2 !=''|null,table_name  like '?2%',1=1) "
-			+ " and if(?3 !=null,table_name   not in (?3),1=1)", nativeQuery = true)
-	Page<SysDbmsTabsInfo> findAllByTableUuid(String jdbcUuid,String tableName,  List<String> list, Pageable pageable);
+			+ " where t.table_schema not in ('INFORMATION_SCHEMA','performance_schema','mysql' ,'sys') "
+			+ " and TABLE_TYPE = 'BASE TABLE' "
+			+ " and if(:tableName !=null,table_name  like concat('%',:tableName,'%'),1=1) "
+			+ " and if(:list !=null,table_name   not in (:list),1=1) ",
+			countQuery = "select count(:jdbcUuid) as l "
+					+ " from information_schema.tables t "
+					+ " where t.table_schema not in ('INFORMATION_SCHEMA','performance_schema','mysql' ,'sys') "
+					+ " and TABLE_TYPE = 'BASE TABLE' "
+					+ " and if(:tableName !=null,table_name  like concat('%',:tableName,'%'),1=1) "
+					+ " and if(:list !=null,table_name   not in (:list),1=1) ",
+			nativeQuery = true)
+	Page<SysDbmsTabsInfoResult> findAllByTableUuid(@Param("jdbcUuid")String jdbcUuid,@Param("tableName")String tableName, @Param("list") List<String> list, Pageable pageable);
 	
 }

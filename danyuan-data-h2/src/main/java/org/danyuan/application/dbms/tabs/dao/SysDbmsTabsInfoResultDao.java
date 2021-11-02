@@ -1,8 +1,8 @@
 package org.danyuan.application.dbms.tabs.dao;
 
+
 import java.util.List;
 
-import org.danyuan.application.bean.manager.dbms.SysDbmsTabsInfo;
 import org.danyuan.application.common.base.BaseDao;
 import org.danyuan.application.dbms.tabs.po.SysDbmsTabsInfoResult;
 import org.hibernate.annotations.DynamicInsert;
@@ -43,16 +43,16 @@ public interface SysDbmsTabsInfoResultDao extends BaseDao<SysDbmsTabsInfoResult>
 			+ " from information_schema.tables "
 			+ " where table_schema !='INFORMATION_SCHEMA' "
 			+ " and TABLE_TYPE = 'TABLE' "
-//			+ " and if(:tableName !=null,table_name  like '%'||:tableName||'%',1=1) "
-//			+ " and if(:list !=null,table_name  not in (:list),1=1)"
-			,countQuery = "select count(1) as l "
+			+ " and NVL2(:tname,table_name  like CONCAT('%',:tname,'%'),1=1) "
+			+ " and NVL2(:list,table_name  NOT IN (:list),1=1)"
+			,countQuery = "select count(:jdbcUuid) as l "
 					+ " from information_schema.tables "
 					+ " where table_schema !='INFORMATION_SCHEMA' "
 					+ " and TABLE_TYPE = 'TABLE' "
-//					+ " and if(:tableName !=null,table_name  like '%'||:tableName||'%',1=1) "
-//					+ " and if(:list !=null,table_name  not in (:list),1=1)"
+					+ " and NVL2(:tname,table_name  like  CONCAT('%',:tname,'%'),1=1) "
+					+ " and NVL2(:list ,table_name  NOT IN (:list),1=1)"
 			, nativeQuery = true)
-	Page<SysDbmsTabsInfoResult> findAllByTableUuid(@Param("jdbcUuid")String jdbcUuid, Pageable pageable);
+	Page<SysDbmsTabsInfoResult> findAllByTableUuid(@Param("jdbcUuid")String jdbcUuid,@Param("tname")String tableName,@Param("list")List<String> list, Pageable pageable);
 
 	
 }

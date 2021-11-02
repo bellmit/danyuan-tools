@@ -1,6 +1,9 @@
 package org.danyuan.application.dbms.tabs.service;
 
+import java.util.List;
+
 import org.danyuan.application.bean.manager.dbms.SysDbmsTabsInfo;
+import org.danyuan.application.common.base.BaseResult;
 import org.danyuan.application.common.base.BaseService;
 import org.danyuan.application.common.base.BaseServiceImpl;
 import org.danyuan.application.common.base.Pagination;
@@ -41,9 +44,11 @@ public class SysDbmsTabsInfoService extends BaseServiceImpl<SysDbmsTabsInfo> imp
 	 * @throws
 	 */
 	@SuppressWarnings({ "rawtypes", "unchecked" })
-	public Page<SysDbmsTabsInfo> findAllByTableUuid(Pagination<SysDbmsTabsInfo> vo) {
+	public BaseResult<Page<SysDbmsTabsInfo>> findAllByTableUuid(Pagination<SysDbmsTabsInfo> vo) {
 		logger.info("微服务访问{}开始。", vo.getInfo().getJdbcUuid());
-		ResponseEntity<Page> result = restTemplate.postForEntity("http://" + vo.getInfo().getJdbcUuid() + "/data/sysDbmsTabsInfo/findAllByTableUuid", vo, Page.class);
+		List<SysDbmsTabsInfo> list = findAll(vo.getInfo());
+		vo.setList(list);
+		ResponseEntity<BaseResult> result = restTemplate.postForEntity("http://" + vo.getInfo().getJdbcUuid() + "/data/sysDbmsTabsInfo/findAllByTableUuid", vo, BaseResult.class);
 		if (result.getStatusCode().value() == 200) {
 			System.out.println(result.getBody());
 			return result.getBody();

@@ -12,3 +12,7 @@ spring:
     - h2
     - hikari
     - redis
+
+app:
+  name: ${spring.application.name}
+  version: @project.version@

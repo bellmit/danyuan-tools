@@ -7,7 +7,8 @@ import org.danyuan.application.bean.manager.dbms.SysDbmsTabsInfo;
 import org.danyuan.application.common.base.BaseService;
 import org.danyuan.application.common.base.BaseServiceImpl;
 import org.danyuan.application.common.base.Pagination;
-import org.danyuan.application.dbms.tabs.dao.SysDbmsTabsInfoDao;
+import org.danyuan.application.dbms.tabs.dao.SysDbmsTabsInfoResultDao;
+import org.danyuan.application.dbms.tabs.po.SysDbmsTabsInfoResult;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,14 +26,14 @@ import org.springframework.stereotype.Service;
  * 时 间 ： 2017年8月3日 下午3:55:43
  * 版 本 ： V1.0
  */
-@Service("sysDbmsTabsInfoService")
-public class SysDbmsTabsInfoService extends BaseServiceImpl<SysDbmsTabsInfo> implements BaseService<SysDbmsTabsInfo> {
+@Service("sysDbmsTabsInfoResultService")
+public class SysDbmsTabsInfoResultService extends BaseServiceImpl<SysDbmsTabsInfoResult> implements BaseService<SysDbmsTabsInfoResult> {
 	
 	//
-	private static final Logger	logger	= LoggerFactory.getLogger(SysDbmsTabsInfoService.class);
+	private static final Logger	logger	= LoggerFactory.getLogger(SysDbmsTabsInfoResultService.class);
 	
 	@Autowired
-	SysDbmsTabsInfoDao			sysDbmsTabsInfoDao;
+	SysDbmsTabsInfoResultDao	sysDbmsTabsInfoDao;
 	
 	/**
 	 * 方法名： findAllByTableUuid
@@ -43,9 +44,10 @@ public class SysDbmsTabsInfoService extends BaseServiceImpl<SysDbmsTabsInfo> imp
 	 * 作 者 ： Administrator
 	 * @throws
 	 */
-	public Page<SysDbmsTabsInfo> findAllByTableUuid(Pagination<SysDbmsTabsInfo> vo) {
+	public Page<SysDbmsTabsInfoResult> findAllByTableUuid(Pagination<SysDbmsTabsInfo> vo) {
 		logger.info("微服务访问{}开始。", vo.getInfo().getJdbcUuid());
-		String tableName = vo.getInfo() != null && vo.getInfo().getTabsName() != null ? vo.getInfo().getTabsName().toUpperCase() : null;
+		String tableName = vo.getInfo().getTabsName() != null ? vo.getInfo().getTabsName().toUpperCase() : null;
+		String tableDesc = vo.getInfo().getTabsDesc() != null ? vo.getInfo().getTabsDesc() : null;
 		
 		List<String> list = null;
 		if (vo.getList() != null) {
@@ -57,7 +59,7 @@ public class SysDbmsTabsInfoService extends BaseServiceImpl<SysDbmsTabsInfo> imp
 			}
 		}
 		PageRequest request = PageRequest.of(vo.getPageNumber() - 1, vo.getPageSize());
-		Page<SysDbmsTabsInfo> page = sysDbmsTabsInfoDao.findAllByTableUuid(vo.getInfo().getJdbcUuid(), tableName, list, request);
+		Page<SysDbmsTabsInfoResult> page = sysDbmsTabsInfoDao.findAllByTableUuid(vo.getInfo().getJdbcUuid(), tableName, list, request);
 		return page;
 	}
 	
