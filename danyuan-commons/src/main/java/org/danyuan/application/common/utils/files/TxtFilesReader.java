@@ -4,7 +4,6 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -23,6 +22,9 @@ import java.util.List;
  * 版 本 ： V1.0
  */
 public class TxtFilesReader {
+	
+	static String default_chartset = "UTF8";
+	
 	/**
 	 * 以字节为单位读取文件，常用于读二进制文件，如图片、声音、影像等文件。
 	 */
@@ -124,15 +126,21 @@ public class TxtFilesReader {
 	
 	/**
 	 * 以行为单位读取文件，常用于读面向行的格式化文件
+	 * 
 	 * @return
 	 */
 	public static List<String> readFileByLines(String fileName) {
+		return readFileByLines(fileName, default_chartset);
+	}
+	
+	public static List<String> readFileByLines(String fileName, String encoding) {
 		File file = new File(fileName);
 		BufferedReader reader = null;
 		List<String> list = null;
 		try {
 			System.out.println("以行为单位读取文件内容，一次读一整行：");
-			reader = new BufferedReader(new FileReader(file));
+			InputStreamReader read = new InputStreamReader(new FileInputStream(file), encoding);// 考虑到编码格式
+			reader = new BufferedReader(read);
 			String tempString = null;
 			// int line = 1;
 			list = new ArrayList<String>();
@@ -167,14 +175,21 @@ public class TxtFilesReader {
 	 * 作 者 ： Tenghui.Wang
 	 * @throws
 	 */
+	
 	public static String readFileFirstLines(String fileName) {
+		return readFileFirstLines(fileName, default_chartset);
+	}
+	
+	public static String readFileFirstLines(String fileName, String encoding) {
 		File file = new File(fileName);
 		BufferedReader reader = null;
 		String tempString = null;
 		try {
 			System.out.println("以行为单位读取文件内容，一次读一整行：");
-			reader = new BufferedReader(new FileReader(file));
+			InputStreamReader read = new InputStreamReader(new FileInputStream(file), encoding);// 考虑到编码格式
+			reader = new BufferedReader(read);
 			tempString = reader.readLine();
+			
 			// int line = 1;
 			// 一次读入一行，直到读入null为文件结束
 			reader.close();
@@ -198,8 +213,13 @@ public class TxtFilesReader {
 	 * 3：读取到输入流后，需要读取生成字节流
 	 * 4：一行一行的输出。readline()。
 	 * 备注：需要考虑的是异常情况
+	 * 
 	 * @param filePath
 	 */
+	public static List<String> readTxtFile(String filePath) {
+		return readTxtFile(filePath, default_chartset);
+	}
+	
 	public static List<String> readTxtFile(String filePath, String encoding) {
 		List<String> strList = new ArrayList<String>();
 		try {

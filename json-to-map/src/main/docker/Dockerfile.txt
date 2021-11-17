@@ -1,0 +1,7 @@
+FROM dockerfile/java:oracle-java8
+
+VOLUME /tmp
+ADD json-to-map.jar /opt/json-to-map/
+EXPOSE 8080
+WORKDIR /opt/json-to-map/
+CMD ["java", "-Djava.security.egd=file:/dev/./urandom", "-Xms512m", "-Xmx1g", "-jar", "json-to-map.jar"]

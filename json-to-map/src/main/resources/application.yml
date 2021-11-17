@@ -1,0 +1,7 @@
+server:  port: 7789  servlet:    context-path: "/JSONpaser"    spring:  application:    name: json-to-map  banner:    charset: utf-8  profiles:    active:    - mysql    - hikari      jpa:    hibernate:      ddl-auto: update    show-sql: true      user:
+  path: "C:\\Users\\Administrator\\Desktop\\新建文件夹 (2)\\"
+  dic: "dic\\"
+  files:
+  - "深圳新宙邦科技股份有限公司 - 副本.txt"
+  - "张家港市国泰华荣化工新材料有限公司 - 副本.txt"
+  
