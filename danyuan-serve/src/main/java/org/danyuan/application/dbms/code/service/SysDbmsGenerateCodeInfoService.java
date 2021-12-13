@@ -8,9 +8,9 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
-import org.danyuan.application.bean.manager.dbms.SysDbmsGenerateCodeInfo;
-import org.danyuan.application.bean.manager.dbms.SysDbmsTabsColsInfo;
-import org.danyuan.application.bean.manager.dbms.SysDbmsTabsInfo;
+import org.danyuan.application.bean.dbms.SysDbmsGenerateCodeInfo;
+import org.danyuan.application.bean.dbms.SysDbmsTabsColsInfo;
+import org.danyuan.application.bean.dbms.SysDbmsTabsInfo;
 import org.danyuan.application.common.base.BaseService;
 import org.danyuan.application.common.base.BaseServiceImpl;
 import org.danyuan.application.common.utils.files.CompressFile;

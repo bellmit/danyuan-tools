@@ -2,7 +2,7 @@ package org.danyuan.application.dbms.tabs.controller;
 
 import java.util.List;
 
-import org.danyuan.application.bean.manager.dbms.SysDbmsUserIndexInfo;
+import org.danyuan.application.bean.dbms.SysDbmsUserIndexInfo;
 import org.danyuan.application.common.base.BaseController;
 import org.danyuan.application.common.base.BaseControllerImpl;
 import org.danyuan.application.dbms.tabs.service.SysDbmsUserIndexInfoService;

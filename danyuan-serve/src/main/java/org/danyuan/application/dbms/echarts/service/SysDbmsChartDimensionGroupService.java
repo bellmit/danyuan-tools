@@ -8,7 +8,7 @@ import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 
-import org.danyuan.application.bean.manager.dbms.SysDbmsChartDimensionGroup;
+import org.danyuan.application.bean.dbms.SysDbmsChartDimensionGroup;
 import org.danyuan.application.common.base.BaseService;
 import org.danyuan.application.common.base.BaseServiceImpl;
 import org.danyuan.application.common.base.Pagination;

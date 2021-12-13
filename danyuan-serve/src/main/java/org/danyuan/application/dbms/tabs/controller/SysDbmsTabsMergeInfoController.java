@@ -2,8 +2,8 @@ package org.danyuan.application.dbms.tabs.controller;
 
 import java.util.List;
 
-import org.danyuan.application.bean.manager.dbms.SysDbmsTabsColsInfo;
-import org.danyuan.application.bean.manager.dbms.SysDbmsTabsMergeInfo;
+import org.danyuan.application.bean.dbms.SysDbmsTabsColsInfo;
+import org.danyuan.application.bean.dbms.SysDbmsTabsMergeInfo;
 import org.danyuan.application.common.base.BaseController;
 import org.danyuan.application.common.base.BaseControllerImpl;
 import org.danyuan.application.common.base.BaseResult;

@@ -10,7 +10,7 @@ import java.util.Date;
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletResponse;
 
-import org.danyuan.application.bean.manager.dbms.SysDbmsGenerateCodeInfo;
+import org.danyuan.application.bean.dbms.SysDbmsGenerateCodeInfo;
 import org.danyuan.application.common.base.BaseController;
 import org.danyuan.application.common.base.BaseControllerImpl;
 import org.danyuan.application.common.base.BaseResult;

@@ -4,7 +4,7 @@ import java.util.List;
 
 import javax.transaction.Transactional;
 
-import org.danyuan.application.bean.manager.dbms.SysDbmsChartDimension;
+import org.danyuan.application.bean.dbms.SysDbmsChartDimension;
 import org.danyuan.application.common.base.BaseDao;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;

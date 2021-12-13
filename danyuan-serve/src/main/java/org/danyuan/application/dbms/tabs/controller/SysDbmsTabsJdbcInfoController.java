@@ -1,6 +1,6 @@
 package org.danyuan.application.dbms.tabs.controller;
 
-import org.danyuan.application.bean.manager.dbms.SysDbmsTabsJdbcInfo;
+import org.danyuan.application.bean.dbms.SysDbmsTabsJdbcInfo;
 import org.danyuan.application.common.base.BaseController;
 import org.danyuan.application.common.base.BaseControllerImpl;
 import org.springframework.web.bind.annotation.RequestMapping;

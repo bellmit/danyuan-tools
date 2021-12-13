@@ -1,6 +1,6 @@
 package org.danyuan.application.dbms.tabs.dao;
 
-import org.danyuan.application.bean.manager.dbms.SysDbmsTabsInfo;
+import org.danyuan.application.bean.dbms.SysDbmsTabsInfo;
 import org.danyuan.application.common.base.BaseDao;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;

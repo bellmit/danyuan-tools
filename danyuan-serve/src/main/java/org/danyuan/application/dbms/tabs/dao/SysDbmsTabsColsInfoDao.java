@@ -2,7 +2,7 @@ package org.danyuan.application.dbms.tabs.dao;
 
 import javax.transaction.Transactional;
 
-import org.danyuan.application.bean.manager.dbms.SysDbmsTabsColsInfo;
+import org.danyuan.application.bean.dbms.SysDbmsTabsColsInfo;
 import org.danyuan.application.common.base.BaseDao;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;

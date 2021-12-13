@@ -1,6 +1,6 @@
 package org.danyuan.application.task.init;
 
-import org.danyuan.application.bean.manager.dbms.SysDbmsTabsJdbcInfo;
+import org.danyuan.application.bean.dbms.SysDbmsTabsJdbcInfo;
 import org.danyuan.application.fegin.ServeFegin;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;

@@ -1,6 +1,6 @@
 package org.danyuan.application.dbms.tabs.controller;
 
-import org.danyuan.application.bean.manager.dbms.SysDbmsTabsInfo;
+import org.danyuan.application.bean.dbms.SysDbmsTabsInfo;
 import org.danyuan.application.common.base.BaseController;
 import org.danyuan.application.common.base.BaseControllerImpl;
 import org.danyuan.application.common.base.BaseResult;
@@ -30,17 +30,17 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/sysDbmsTabsInfo")
 public class SysDbmsTabsInfoResultController extends BaseControllerImpl<SysDbmsTabsInfoResult> implements BaseController<SysDbmsTabsInfoResult> {
-	
+
 	private static final Logger		logger	= LoggerFactory.getLogger(SysDbmsTabsInfoResultController.class);
-	
+
 	@Autowired
 	SysDbmsTabsInfoResultService	sysDbmsTabsInfoResultService;
-	
+
 	@RequestMapping(value = "/findAllByTableUuid", method = { RequestMethod.POST })
 	public BaseResult<Page<SysDbmsTabsInfoResult>> findAllByTableUuid(@RequestBody Pagination<SysDbmsTabsInfo> vo) {
 		logger.info("数据库表信息查询：{}", vo.toString());
 		Page<SysDbmsTabsInfoResult> page = sysDbmsTabsInfoResultService.findAllByTableUuid(vo);
 		return ResultUtil.success(page);
 	}
-	
+
 }

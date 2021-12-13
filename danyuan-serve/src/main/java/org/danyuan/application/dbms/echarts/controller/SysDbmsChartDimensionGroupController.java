@@ -2,7 +2,7 @@ package org.danyuan.application.dbms.echarts.controller;
 
 import javax.servlet.http.HttpServletRequest;
 
-import org.danyuan.application.bean.manager.dbms.SysDbmsChartDimensionGroup;
+import org.danyuan.application.bean.dbms.SysDbmsChartDimensionGroup;
 import org.danyuan.application.common.base.BaseController;
 import org.danyuan.application.common.base.BaseControllerImpl;
 import org.danyuan.application.dbms.echarts.service.SysDbmsChartDimensionGroupService;

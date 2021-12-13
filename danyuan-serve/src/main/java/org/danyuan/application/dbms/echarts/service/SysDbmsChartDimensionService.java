@@ -3,7 +3,7 @@ package org.danyuan.application.dbms.echarts.service;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.danyuan.application.bean.manager.dbms.SysDbmsChartDimension;
+import org.danyuan.application.bean.dbms.SysDbmsChartDimension;
 import org.danyuan.application.common.base.BaseService;
 import org.danyuan.application.common.base.BaseServiceImpl;
 import org.danyuan.application.common.base.Pagination;

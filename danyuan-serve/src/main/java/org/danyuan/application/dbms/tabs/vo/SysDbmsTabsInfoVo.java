@@ -3,7 +3,7 @@ package org.danyuan.application.dbms.tabs.vo;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.danyuan.application.bean.manager.dbms.SysDbmsTabsInfo;
+import org.danyuan.application.bean.dbms.SysDbmsTabsInfo;
 import org.danyuan.application.common.base.Pagination;
 
 public class SysDbmsTabsInfoVo extends Pagination<SysDbmsTabsInfo> {

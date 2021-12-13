@@ -9,9 +9,9 @@ import java.util.UUID;
 
 import javax.sql.DataSource;
 
-import org.danyuan.application.bean.manager.dbms.SysDbmsAdviMessInfo;
-import org.danyuan.application.bean.manager.dbms.SysDbmsTabsColsInfo;
-import org.danyuan.application.bean.manager.dbms.SysDbmsTabsInfo;
+import org.danyuan.application.bean.dbms.SysDbmsAdviMessInfo;
+import org.danyuan.application.bean.dbms.SysDbmsTabsColsInfo;
+import org.danyuan.application.bean.dbms.SysDbmsTabsInfo;
 import org.danyuan.application.dbms.tabs.dao.SysDbmsAdviMessInfoDao;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

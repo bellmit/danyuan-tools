@@ -2,9 +2,9 @@ package org.danyuan.application.dbms.code.service;
 
 import java.util.List;
 
-import org.danyuan.application.bean.manager.dbms.SysDbmsGenerateCodeInfo;
-import org.danyuan.application.bean.manager.dbms.SysDbmsTabsColsInfo;
-import org.danyuan.application.bean.manager.dbms.SysDbmsTabsInfo;
+import org.danyuan.application.bean.dbms.SysDbmsGenerateCodeInfo;
+import org.danyuan.application.bean.dbms.SysDbmsTabsColsInfo;
+import org.danyuan.application.bean.dbms.SysDbmsTabsInfo;
 import org.danyuan.application.common.utils.files.TxtFilesWriter;
 
 /**

@@ -5,8 +5,8 @@ import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
-import org.danyuan.application.bean.manager.dbms.SysDbmsTabsColsInfo;
-import org.danyuan.application.bean.manager.dbms.SysDbmsTabsInfo;
+import org.danyuan.application.bean.dbms.SysDbmsTabsColsInfo;
+import org.danyuan.application.bean.dbms.SysDbmsTabsInfo;
 import org.danyuan.application.common.base.BaseService;
 import org.danyuan.application.common.base.BaseServiceImpl;
 import org.danyuan.application.common.base.Pagination;

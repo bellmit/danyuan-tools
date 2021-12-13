@@ -1,6 +1,6 @@
 package org.danyuan.application.dbms.tabs.vo;
 
-import org.danyuan.application.bean.manager.dbms.SysDbmsUserIndexInfo;
+import org.danyuan.application.bean.dbms.SysDbmsUserIndexInfo;
 import org.danyuan.application.common.base.Pagination;
 
 /**

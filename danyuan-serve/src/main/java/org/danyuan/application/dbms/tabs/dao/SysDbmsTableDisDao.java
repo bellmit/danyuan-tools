@@ -1,6 +1,6 @@
 package org.danyuan.application.dbms.tabs.dao;
 
-import org.danyuan.application.bean.manager.dbms.SysDbmsTableDis;
+import org.danyuan.application.bean.dbms.SysDbmsTableDis;
 import org.danyuan.application.common.base.BaseDao;
 import org.springframework.stereotype.Repository;
 

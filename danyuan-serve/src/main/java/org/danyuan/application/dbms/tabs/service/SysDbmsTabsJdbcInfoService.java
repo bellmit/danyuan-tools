@@ -1,6 +1,6 @@
 package org.danyuan.application.dbms.tabs.service;
 
-import org.danyuan.application.bean.manager.dbms.SysDbmsTabsJdbcInfo;
+import org.danyuan.application.bean.dbms.SysDbmsTabsJdbcInfo;
 import org.danyuan.application.common.base.BaseService;
 import org.danyuan.application.common.base.BaseServiceImpl;
 import org.springframework.stereotype.Service;

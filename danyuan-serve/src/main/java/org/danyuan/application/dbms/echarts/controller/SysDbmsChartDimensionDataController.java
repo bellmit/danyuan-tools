@@ -1,6 +1,6 @@
 package org.danyuan.application.dbms.echarts.controller;
 
-import org.danyuan.application.bean.manager.dbms.SysDbmsChartDimensionData;
+import org.danyuan.application.bean.dbms.SysDbmsChartDimensionData;
 import org.danyuan.application.common.base.BaseController;
 import org.danyuan.application.common.base.BaseControllerImpl;
 import org.danyuan.application.dbms.echarts.service.SysDbmsChartDimensionDataService;

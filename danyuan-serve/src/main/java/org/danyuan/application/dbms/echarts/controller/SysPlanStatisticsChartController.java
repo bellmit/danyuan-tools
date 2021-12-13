@@ -12,10 +12,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.danyuan.application.bean.manager.dbms.SysDbmsChartDimension;
-import org.danyuan.application.bean.manager.dbms.SysDbmsChartDimensionData;
-import org.danyuan.application.bean.manager.dbms.SysDbmsTabsColsInfo;
-import org.danyuan.application.bean.manager.dbms.SysDbmsTabsInfo;
+import org.danyuan.application.bean.dbms.SysDbmsChartDimension;
+import org.danyuan.application.bean.dbms.SysDbmsChartDimensionData;
+import org.danyuan.application.bean.dbms.SysDbmsTabsColsInfo;
+import org.danyuan.application.bean.dbms.SysDbmsTabsInfo;
 import org.danyuan.application.common.utils.string.StringUtils;
 import org.danyuan.application.dbms.echarts.service.SysDbmsChartDimensionDataService;
 import org.danyuan.application.dbms.echarts.service.SysDbmsChartDimensionService;

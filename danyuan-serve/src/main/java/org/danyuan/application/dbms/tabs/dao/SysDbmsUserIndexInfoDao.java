@@ -2,7 +2,7 @@ package org.danyuan.application.dbms.tabs.dao;
 
 import java.util.List;
 
-import org.danyuan.application.bean.manager.dbms.SysDbmsUserIndexInfo;
+import org.danyuan.application.bean.dbms.SysDbmsUserIndexInfo;
 import org.danyuan.application.common.base.BaseDao;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;

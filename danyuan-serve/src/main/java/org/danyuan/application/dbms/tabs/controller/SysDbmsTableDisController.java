@@ -1,6 +1,6 @@
 package org.danyuan.application.dbms.tabs.controller;
 
-import org.danyuan.application.bean.manager.dbms.SysDbmsTableDis;
+import org.danyuan.application.bean.dbms.SysDbmsTableDis;
 import org.danyuan.application.common.base.BaseController;
 import org.danyuan.application.common.base.BaseControllerImpl;
 import org.danyuan.application.dbms.tabs.service.SysDbmsTableDisService;

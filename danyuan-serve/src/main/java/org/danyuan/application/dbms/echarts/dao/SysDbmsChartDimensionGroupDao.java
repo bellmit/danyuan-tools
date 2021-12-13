@@ -1,6 +1,6 @@
 package org.danyuan.application.dbms.echarts.dao;
 
-import org.danyuan.application.bean.manager.dbms.SysDbmsChartDimensionGroup;
+import org.danyuan.application.bean.dbms.SysDbmsChartDimensionGroup;
 import org.danyuan.application.common.base.BaseDao;
 import org.springframework.stereotype.Repository;
 

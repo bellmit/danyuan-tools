@@ -2,7 +2,7 @@ package org.danyuan.application.dbms.tabs.service;
 
 import java.util.List;
 
-import org.danyuan.application.bean.manager.dbms.SysDbmsTabsInfo;
+import org.danyuan.application.bean.dbms.SysDbmsTabsInfo;
 import org.danyuan.application.common.base.BaseResult;
 import org.danyuan.application.common.base.BaseService;
 import org.danyuan.application.common.base.BaseServiceImpl;
@@ -27,13 +27,13 @@ import org.springframework.web.client.RestTemplate;
  */
 @Service("sysDbmsTabsInfoService")
 public class SysDbmsTabsInfoService extends BaseServiceImpl<SysDbmsTabsInfo> implements BaseService<SysDbmsTabsInfo> {
-	
+
 	//
 	private static final Logger	logger	= LoggerFactory.getLogger(SysDbmsTabsInfoService.class);
-	
+
 	@Autowired
 	private RestTemplate		restTemplate;
-	
+
 	/**
 	 * 方法名： findAllByTableUuid
 	 * 功 能： TODO(这里用一句话描述这个方法的作用)
@@ -56,7 +56,7 @@ public class SysDbmsTabsInfoService extends BaseServiceImpl<SysDbmsTabsInfo> imp
 			logger.error("微服务访问失败：{}异常。", vo.getInfo().getJdbcUuid());
 			return null;
 		}
-		
+
 	}
-	
+
 }

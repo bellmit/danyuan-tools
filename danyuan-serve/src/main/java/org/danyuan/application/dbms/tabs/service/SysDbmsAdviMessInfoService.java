@@ -2,7 +2,7 @@ package org.danyuan.application.dbms.tabs.service;
 
 import java.util.List;
 
-import org.danyuan.application.bean.manager.dbms.SysDbmsAdviMessInfo;
+import org.danyuan.application.bean.dbms.SysDbmsAdviMessInfo;
 import org.danyuan.application.common.base.BaseService;
 import org.danyuan.application.common.base.BaseServiceImpl;
 import org.danyuan.application.dbms.tabs.dao.SysDbmsAdviMessInfoDao;

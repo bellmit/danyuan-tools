@@ -1,8 +1,9 @@
 package org.danyuan.application.fegin;
 
-import org.danyuan.application.bean.manager.dbms.SysDbmsTabsJdbcInfo;
+import org.danyuan.application.bean.dbms.SysDbmsTabsJdbcInfo;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
  * 文件名 ： ServeFegin.java
@@ -15,8 +16,9 @@ import org.springframework.web.bind.annotation.PostMapping;
  * 版 本 ： V1.0
  */
 @FeignClient(name = "danyuan-serve")
+@RequestMapping("/serve")
 public interface ServeFegin {
-	
+
 	/**
 	 * 方法名： save
 	 * 功 能： TODO(这里用一句话描述这个方法的作用)
@@ -25,7 +27,7 @@ public interface ServeFegin {
 	 * 作 者 ： wth
 	 * @throws
 	 */
-	@PostMapping("/serve/sysDbmsTabsJdbcInfo/save")
+	@PostMapping("/sysDbmsTabsJdbcInfo/save")
 	void save(SysDbmsTabsJdbcInfo info);
-	
+
 }

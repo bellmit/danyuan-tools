@@ -1,6 +1,6 @@
 package org.danyuan.application.fegin;
 
-import org.danyuan.application.bean.manager.dbms.SysDbmsTabsJdbcInfo;
+import org.danyuan.application.bean.dbms.SysDbmsTabsJdbcInfo;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.PostMapping;
 

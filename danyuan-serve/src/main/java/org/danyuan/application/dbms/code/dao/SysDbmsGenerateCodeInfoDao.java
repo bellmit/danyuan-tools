@@ -1,6 +1,6 @@
 package org.danyuan.application.dbms.code.dao;
 
-import org.danyuan.application.bean.manager.dbms.SysDbmsGenerateCodeInfo;
+import org.danyuan.application.bean.dbms.SysDbmsGenerateCodeInfo;
 import org.danyuan.application.common.base.BaseDao;
 import org.springframework.stereotype.Repository;
 
